@@ -1,0 +1,913 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [pvpgn-users] [PVPGN SVN 1.99-548] MOTD bug
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/pvpgn-users/2009-February/index.html" >
+   <LINK REL="made" HREF="mailto:pvpgn-users%40lists.berlios.de?Subject=Re%3A%20%5Bpvpgn-users%5D%20%5BPVPGN%20SVN%201.99-548%5D%20MOTD%20bug&In-Reply-To=%3Ceb9d4d380902250113i4aba9907q919095f054423717%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000052.html">
+   <LINK REL="Next"  HREF="000054.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[pvpgn-users] [PVPGN SVN 1.99-548] MOTD bug</H1>
+    <B>Pelish</B> 
+    <A HREF="mailto:pvpgn-users%40lists.berlios.de?Subject=Re%3A%20%5Bpvpgn-users%5D%20%5BPVPGN%20SVN%201.99-548%5D%20MOTD%20bug&In-Reply-To=%3Ceb9d4d380902250113i4aba9907q919095f054423717%40mail.gmail.com%3E"
+       TITLE="[pvpgn-users] [PVPGN SVN 1.99-548] MOTD bug">pelish at gmail.com
+       </A><BR>
+    <I>Wed Feb 25 10:13:31 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000052.html">[pvpgn-users] [PVPGN SVN 1.99-548] MOTD bug
+</A></li>
+        <LI>Next message: <A HREF="000054.html">[pvpgn-users] [PVPGN SVN 1.99-548] MOTD bug
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#53">[ date ]</a>
+              <a href="thread.html#53">[ thread ]</a>
+              <a href="subject.html#53">[ subject ]</a>
+              <a href="author.html#53">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+thank you for reporting that. I will fix that probably today. It seems like
+Stealthbot do not send language tag properly (and checking of that failds).
+
+Regards
+Pelish
+
+2009/2/25 Robert McFarlane &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/pvpgn-users">rmcfarlane at internode.on.net</A>&gt;
+
+&gt;<i> Server crashes once a bot client tries to connect (Stealthbot/Miragebot). I
+</I>&gt;<i> assume this is to do with the way that the clients send their locale
+</I>&gt;<i> version.
+</I>&gt;<i>
+</I>&gt;<i> Logs are attached
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Feb 25 12:16:30 [info ] eventlog_startup: logging event levels:
+</I>&gt;<i> fatal,error,warn,info,debug,trace
+</I>&gt;<i> Feb 25 12:16:30 [debug] give_up_root_privileges: about to give up root
+</I>&gt;<i> privileges
+</I>&gt;<i> Feb 25 12:16:30 [info ] pvpgn_greeting: PvPGN version 1.99.0-SVN process
+</I>&gt;<i> 14103
+</I>&gt;<i> Feb 25 12:16:30 [info ] pvpgn_greeting: running on Linux #1 SMP Mon Jan 26
+</I>&gt;<i> 00:55:21 UTC 2009 2.6.24-23-server (i686)
+</I>&gt;<i> Feb 25 12:16:30 [info ] storage_init: initializing storage layer (available
+</I>&gt;<i> drivers: file, sql, sql2)
+</I>&gt;<i> Feb 25 12:16:30 [info ] sql_mysql_init: Successfully turned on
+</I>&gt;<i> MYSQL_OPT_RECONNECT.
+</I>&gt;<i> Feb 25 12:16:30 [info ] sql_dbcreator: Creating missing tables and columns
+</I>&gt;<i> (if any)
+</I>&gt;<i> Feb 25 12:16:30 [info ] sql_dbcreator: finished adding missing tables and
+</I>&gt;<i> columns
+</I>&gt;<i> Feb 25 12:16:30 [info ] storage_init: using sql storage driver
+</I>&gt;<i> Feb 25 12:16:30 [info ] FDWEpollBackend: fdwatch epoll() based layer
+</I>&gt;<i> initialized (max 960 sockets)
+</I>&gt;<i> Feb 25 12:16:30 [info ] server_set_hostname: set hostname to
+</I>&gt;<i> &quot;tabitha.7300g.infinate8.lan&quot;
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;The Void&quot;
+</I>&gt;<i> shortname=&quot;The Void&quot; clienttag=(none) country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;AusCraft&quot;
+</I>&gt;<i> shortname=&quot;Starcraft&quot; clienttag=&quot;STAR&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;AusCraft&quot;
+</I>&gt;<i> shortname=&quot;Brood War&quot; clienttag=&quot;SEXP&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;AusCraft&quot;
+</I>&gt;<i> shortname=&quot;Starcraft Shareware&quot; clienttag=&quot;SSHR&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;AusCraft&quot;
+</I>&gt;<i> shortname=&quot;Diablo Retail&quot; clienttag=&quot;DRTL&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;AusCraft&quot;
+</I>&gt;<i> shortname=&quot;War2BNE&quot; clienttag=&quot;W2BN&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;AusCraft&quot;
+</I>&gt;<i> shortname=&quot;Diablo II&quot; clienttag=&quot;D2DV&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;AusCraft&quot;
+</I>&gt;<i> shortname=&quot;Diablo II&quot; clienttag=&quot;D2XP&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;AusCraft&quot;
+</I>&gt;<i> shortname=&quot;W3&quot; clienttag=&quot;W3XP&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Command n
+</I>&gt;<i> Conqr&quot; shortname=&quot;Command n Conqr&quot; clienttag=&quot;WCHT&quot; country=(none)
+</I>&gt;<i> realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Monopoly&quot;
+</I>&gt;<i> shortname=&quot;Monopoly&quot; clienttag=&quot;WCHT&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Red Alert&quot;
+</I>&gt;<i> shortname=&quot;Red Alert&quot; clienttag=&quot;WCHT&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Renegade-1&quot;
+</I>&gt;<i> shortname=&quot;Lob 12 0&quot; clienttag=&quot;RNGD&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Dune 2000-1&quot;
+</I>&gt;<i> shortname=&quot;Lob 14 0&quot; clienttag=&quot;DN2K&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Nox-1&quot;
+</I>&gt;<i> shortname=&quot;Lob 16 0&quot; clienttag=&quot;NOXX&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Nox-2&quot;
+</I>&gt;<i> shortname=&quot;Lob 16 1&quot; clienttag=&quot;NOXX&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Tiberian
+</I>&gt;<i> Sun-1&quot; shortname=&quot;Lob 18 0&quot; clienttag=&quot;TSUN&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Tiberian
+</I>&gt;<i> Sun-2&quot; shortname=&quot;Lob 18 1&quot; clienttag=&quot;TSUN&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Tiberian
+</I>&gt;<i> Sun-3&quot; shortname=&quot;Lob 18 2&quot; clienttag=&quot;TSUN&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Red Alert-1&quot;
+</I>&gt;<i> shortname=&quot;Lob 21 0&quot; clienttag=&quot;RALT&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Emperor-1&quot;
+</I>&gt;<i> shortname=&quot;Lob 31 0&quot; clienttag=&quot;UNKN&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Emperor-2&quot;
+</I>&gt;<i> shortname=&quot;Lob 31 1&quot; clienttag=&quot;UNKN&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Red Alert
+</I>&gt;<i> 2-1&quot; shortname=&quot;Lob 33 0&quot; clienttag=&quot;RAL2&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Red Alert
+</I>&gt;<i> 2-2&quot; shortname=&quot;Lob 33 1&quot; clienttag=&quot;RAL2&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Nox Quest-1&quot;
+</I>&gt;<i> shortname=&quot;Lob 37 0&quot; clienttag=&quot;NOXQ&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Yuri's
+</I>&gt;<i> Revenge-1&quot; shortname=&quot;Lob 41 0&quot; clienttag=&quot;YURI&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: creating new channel &quot;Yuri's
+</I>&gt;<i> Revenge-2&quot; shortname=&quot;Lob 41 1&quot; clienttag=&quot;YURI&quot; country=(none) realm=(none)
+</I>&gt;<i> Feb 25 12:16:30 [debug] channel_create: channel created successfully
+</I>&gt;<i> Feb 25 12:16:30 [debug] AdBanner: created ad id=0x00000001
+</I>&gt;<i> filename=&quot;AusCraft.mng&quot; extensiontag=0x676e6d2e delay=30 link=&quot;
+</I>&gt;<i> <A HREF="http://infinate8.zapto.org:1337/forums">http://infinate8.zapto.org:1337/forums</A>&quot; next_id=0x00000000 client=&quot;WAR3&quot;
+</I>&gt;<i> lang=&quot;NULL&quot;
+</I>&gt;<i> Feb 25 12:16:30 [debug] AdBanner: created ad id=0x00000002
+</I>&gt;<i> filename=&quot;AusCraft.mng&quot; extensiontag=0x676e6d2e delay=30 link=&quot;
+</I>&gt;<i> <A HREF="http://infinate8.zapto.org:1337/forums">http://infinate8.zapto.org:1337/forums</A>&quot; next_id=0x00000000 client=&quot;WAR3&quot;
+</I>&gt;<i> lang=&quot;NULL&quot;
+</I>&gt;<i> Feb 25 12:16:30 [debug] AdBanner: created ad id=0x00000005
+</I>&gt;<i> filename=&quot;AusCraft.mng&quot; extensiontag=0x676e6d2e delay=30 link=&quot;
+</I>&gt;<i> <A HREF="http://infinate8.zapto.org:1337/forums">http://infinate8.zapto.org:1337/forums</A>&quot; next_id=0x00000000 client=&quot;W3XP&quot;
+</I>&gt;<i> lang=&quot;NULL&quot;
+</I>&gt;<i> Feb 25 12:16:30 [debug] AdBanner: created ad id=0x00000006
+</I>&gt;<i> filename=&quot;AusCraft.mng&quot; extensiontag=0x676e6d2e delay=30 link=&quot;
+</I>&gt;<i> <A HREF="http://infinate8.zapto.org:1337/forums">http://infinate8.zapto.org:1337/forums</A>&quot; next_id=0x00000000 client=&quot;W3XP&quot;
+</I>&gt;<i> lang=&quot;NULL&quot;
+</I>&gt;<i> Feb 25 12:16:30 [debug] AdBanner: created ad id=0x00000009
+</I>&gt;<i> filename=&quot;ad000001.smk&quot; extensiontag=0x6b6d732e delay=30 link=&quot;
+</I>&gt;<i> <A HREF="http://pvpgn.berlios.de">http://pvpgn.berlios.de</A>&quot; next_id=0x00000000 client=&quot;NULL&quot; lang=&quot;NULL&quot;
+</I>&gt;<i> Feb 25 12:16:30 [debug] AdBanner: created ad id=0x0000000a
+</I>&gt;<i> filename=&quot;ad000001.smk&quot; extensiontag=0x6b6d732e delay=30 link=&quot;
+</I>&gt;<i> <A HREF="http://pvpgn.berlios.de">http://pvpgn.berlios.de</A>&quot; next_id=0x00000000 client=&quot;NULL&quot; lang=&quot;NULL&quot;
+</I>&gt;<i> Feb 25 12:16:30 [info ] output_init: initializing output file
+</I>&gt;<i> Feb 25 12:16:30 [info ] accountlist_create: started creating accountlist
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 1, startxp: 0 neededxp: 100 lossfactor: 10 mingames: 0)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 2, startxp: 100 neededxp: 100 lossfactor: 10 mingames: 0)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 3, startxp: 200 neededxp: 200 lossfactor: 10 mingames: 0)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 4, startxp: 400 neededxp: 200 lossfactor: 25 mingames: 1)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 5, startxp: 600 neededxp: 300 lossfactor: 25 mingames: 1)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 6, startxp: 900 neededxp: 300 lossfactor: 43 mingames: 1)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 7, startxp: 1200 neededxp: 400 lossfactor: 43 mingames: 2)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 8, startxp: 1600 neededxp: 400 lossfactor: 67 mingames: 2)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 9, startxp: 2000 neededxp: 500 lossfactor: 67 mingames: 2)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 10, startxp: 2500 neededxp: 500 lossfactor: 100 mingames: 3)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 11, startxp: 3000 neededxp: 500 lossfactor: 100 mingames: 3)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 12, startxp: 3500 neededxp: 500 lossfactor: 100 mingames: 3)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 13, startxp: 4000 neededxp: 500 lossfactor: 100 mingames: 3)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 14, startxp: 4500 neededxp: 500 lossfactor: 100 mingames: 4)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 15, startxp: 5000 neededxp: 500 lossfactor: 100 mingames: 4)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 16, startxp: 5500 neededxp: 500 lossfactor: 100 mingames: 4)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 17, startxp: 6000 neededxp: 500 lossfactor: 100 mingames: 5)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 18, startxp: 6500 neededxp: 500 lossfactor: 100 mingames: 5)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 19, startxp: 7000 neededxp: 500 lossfactor: 100 mingames: 5)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 20, startxp: 7500 neededxp: 500 lossfactor: 100 mingames: 6)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 21, startxp: 8000 neededxp: 500 lossfactor: 100 mingames: 6)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 22, startxp: 8500 neededxp: 500 lossfactor: 100 mingames: 6)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 23, startxp: 9000 neededxp: 500 lossfactor: 100 mingames: 6)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 24, startxp: 9500 neededxp: 500 lossfactor: 100 mingames: 7)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 25, startxp: 10000 neededxp: 500 lossfactor: 100 mingames: 7)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 26, startxp: 10500 neededxp: 500 lossfactor: 100 mingames: 7)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 27, startxp: 11000 neededxp: 500 lossfactor: 100 mingames: 8)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 28, startxp: 11500 neededxp: 500 lossfactor: 100 mingames: 8)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 29, startxp: 12000 neededxp: 500 lossfactor: 100 mingames: 8)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 30, startxp: 12500 neededxp: 500 lossfactor: 100 mingames: 9)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 31, startxp: 13000 neededxp: 500 lossfactor: 100 mingames: 9)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 32, startxp: 13500 neededxp: 500 lossfactor: 100 mingames: 9)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 33, startxp: 14000 neededxp: 500 lossfactor: 100 mingames: 9)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 34, startxp: 14500 neededxp: 500 lossfactor: 100 mingames: 10)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 35, startxp: 15000 neededxp: 500 lossfactor: 100 mingames: 10)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 36, startxp: 15500 neededxp: 500 lossfactor: 100 mingames: 10)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 37, startxp: 16000 neededxp: 500 lossfactor: 100 mingames: 11)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 38, startxp: 16500 neededxp: 500 lossfactor: 100 mingames: 11)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 39, startxp: 17000 neededxp: 500 lossfactor: 100 mingames: 11)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 40, startxp: 17500 neededxp: 500 lossfactor: 100 mingames: 12)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 41, startxp: 18000 neededxp: 500 lossfactor: 100 mingames: 12)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 42, startxp: 18500 neededxp: 500 lossfactor: 100 mingames: 12)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 43, startxp: 19000 neededxp: 500 lossfactor: 100 mingames: 12)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 44, startxp: 19500 neededxp: 500 lossfactor: 100 mingames: 13)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 45, startxp: 20000 neededxp: 500 lossfactor: 100 mingames: 13)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 46, startxp: 20500 neededxp: 500 lossfactor: 100 mingames: 13)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 47, startxp: 21000 neededxp: 500 lossfactor: 100 mingames: 14)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 48, startxp: 21500 neededxp: 500 lossfactor: 100 mingames: 14)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 49, startxp: 22000 neededxp: 500 lossfactor: 100 mingames: 14)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 50, startxp: 22500 neededxp: 500 lossfactor: 100 mingames: 15)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 51, startxp: 23000 neededxp: 500 lossfactor: 100 mingames: 15)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 52, startxp: 23500 neededxp: 500 lossfactor: 100 mingames: 15)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 53, startxp: 24000 neededxp: 500 lossfactor: 100 mingames: 15)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 54, startxp: 24500 neededxp: 500 lossfactor: 100 mingames: 16)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 55, startxp: 25000 neededxp: 500 lossfactor: 100 mingames: 16)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 56, startxp: 25500 neededxp: 500 lossfactor: 100 mingames: 16)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 57, startxp: 26000 neededxp: 500 lossfactor: 100 mingames: 17)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 58, startxp: 26500 neededxp: 500 lossfactor: 100 mingames: 17)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 59, startxp: 27000 neededxp: 500 lossfactor: 100 mingames: 17)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 60, startxp: 27500 neededxp: 500 lossfactor: 100 mingames: 18)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 61, startxp: 28000 neededxp: 500 lossfactor: 100 mingames: 18)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 62, startxp: 28500 neededxp: 500 lossfactor: 100 mingames: 18)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 63, startxp: 29000 neededxp: 500 lossfactor: 100 mingames: 18)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 64, startxp: 29500 neededxp: 500 lossfactor: 100 mingames: 19)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: inserting level XP info
+</I>&gt;<i> (level: 65, startxp: 30000 neededxp: 500 lossfactor: 100 mingames: 19)
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: parsed xpcalc leveldiff : 0
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: parsed xpcalc leveldiff : 1
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: parsed xpcalc leveldiff : 2
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: parsed xpcalc leveldiff : 3
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: parsed xpcalc leveldiff : 4
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: parsed xpcalc leveldiff : 5
+</I>&gt;<i> Feb 25 12:16:30 [trace] ladder_createxptable: parsed xpcalc leveldiff : 6
+</I>&gt;<i> Feb 25 12:16:30 [info ] ladder_createxptable: set war3 xpcalc maxleveldiff
+</I>&gt;<i> to 6
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/SEXP_AR_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/SEXP_CR_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/SEXP_AW_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/SEXP_CW_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/SEXP_AG_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/SEXP_CG_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/STAR_AR_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/STAR_CR_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/STAR_AW_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/STAR_CW_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/STAR_AG_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/STAR_CG_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_AR_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_CR_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_AW_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_CW_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_AG_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_CG_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_ARI_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_CRI_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_AWI_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_CWI_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_AGI_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_CGI_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/RAL2_SOLO_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/TSUN_SOLO_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/W3XP_SOLO_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/WAR3_SOLO_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/W3XP_TEAM_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/WAR3_TEAM_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/W3XP_FFA_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/WAR3_FFA_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/W3XP_AT_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] loadBinary: successfully loaded
+</I>&gt;<i> /home/pvpgn/var/ladders/WAR3_AT_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/SEXP_AR_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/SEXP_CR_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/SEXP_AW_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/SEXP_CW_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/SEXP_AG_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/SEXP_CG_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/STAR_AR_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/STAR_CR_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/STAR_AW_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/STAR_CW_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/STAR_AG_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/STAR_CG_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_AR_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_CR_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_AW_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_CW_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_AG_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_CG_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_ARI_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_CRI_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_AWI_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_CWI_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_AGI_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/W2BN_CGI_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/RAL2_SOLO_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/TSUN_SOLO_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/W3XP_SOLO_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/WAR3_SOLO_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/W3XP_TEAM_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/WAR3_TEAM_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/W3XP_FFA_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/WAR3_FFA_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/W3XP_AT_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] saveBinary: successfully saved
+</I>&gt;<i> /home/pvpgn/var/ladders/WAR3_AT_LADDER
+</I>&gt;<i> Feb 25 12:16:30 [info ] tracker_set_servers: tracking packets will be sent
+</I>&gt;<i> to 208.100.53.121:6114
+</I>&gt;<i> Feb 25 12:16:30 [info ] aliasfile_load: done loading aliases
+</I>&gt;<i> Feb 25 12:16:30 [debug] trans_load: Adding Host -&gt; 0.0.0.0:6200, Output -&gt;
+</I>&gt;<i> 121.45.99.170:6200, Network 0.0.0.0/0x00000000 - (include)
+</I>&gt;<i> Feb 25 12:16:30 [debug] trans_load: Adding Host -&gt; 127.0.1.1:6000, Output
+</I>&gt;<i> -&gt; 121.45.99.170:6000, Network 0.0.0.0/0x00000000 - (include)
+</I>&gt;<i> Feb 25 12:16:30 [debug] trans_load: Adding Host -&gt; 192.168.1.100:6900,
+</I>&gt;<i> Output -&gt; 192.168.1.100:6900, Network 192.168.1.0/0xffffff00 - (exclude)
+</I>&gt;<i> Feb 25 12:16:30 [debug] trans_load: Adding Host -&gt; 192.168.1.100:6900,
+</I>&gt;<i> Output -&gt; 121.45.99.170:6900, Network 0.0.0.0/0x00000000 - (include)
+</I>&gt;<i> Feb 25 12:16:30 [info ] trans_load: trans file loaded
+</I>&gt;<i> Feb 25 12:16:30 [trace] tournament_init: added tournament map
+</I>&gt;<i> &quot;Maps\(8)Battleground.w3m&quot; for WAR3
+</I>&gt;<i> Feb 25 12:16:30 [trace] tournament_init: added tournament map
+</I>&gt;<i> &quot;Maps\(8)PlainsOfSnow.w3m&quot; for WAR3
+</I>&gt;<i> Feb 25 12:16:30 [trace] tournament_init: added tournament map
+</I>&gt;<i> &quot;Maps\(8)BloodvenomFalls.w3m&quot; for WAR3
+</I>&gt;<i> Feb 25 12:16:30 [trace] tournament_init: added tournament map
+</I>&gt;<i> &quot;Maps\(8)GardenOfWar.w3m&quot; for WAR3
+</I>&gt;<i> Feb 25 12:16:30 [trace] tournament_init: added tournament map
+</I>&gt;<i> &quot;Maps\FrozenThrone\(8)Mur'gulOasis.w3x&quot; for W3XP
+</I>&gt;<i> Feb 25 12:16:30 [trace] tournament_init: added tournament map
+</I>&gt;<i> &quot;Maps\FrozenThrone\(8)PlainsOfSnow.w3x&quot; for W3XP
+</I>&gt;<i> Feb 25 12:16:30 [trace] tournament_init: added tournament map
+</I>&gt;<i> &quot;Maps\FrozenThrone\(8)RockQuarry.w3x&quot; for W3XP
+</I>&gt;<i> Feb 25 12:16:30 [trace] tournament_init: added tournament map
+</I>&gt;<i> &quot;Maps\FrozenThrone\(8)Sanctuary.w3x&quot; for W3XP
+</I>&gt;<i> Feb 25 12:16:30 [error] anongameinfo_load: could not open file &quot;
+</I>&gt;<i> /home/pvpgn/etc/anongame_infos.conf&quot; for reading (std::fopen: No such file
+</I>&gt;<i> or directory), using default values
+</I>&gt;<i> Feb 25 12:16:30 [error] anongame_infos_set_defaults: got NULL
+</I>&gt;<i> anongame_infos_DESC, trying to init
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 127 status: 4
+</I>&gt;<i> join_time: 1235362846
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 7 status: 1
+</I>&gt;<i> join_time: 1234850799
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 84 status: 1
+</I>&gt;<i> join_time: 1234768690
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 10 status: 4
+</I>&gt;<i> join_time: 1234768662
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 38 status: 1
+</I>&gt;<i> join_time: 1235176421
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 3 status: 4
+</I>&gt;<i> join_time: 1234854677
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 108 status: 4
+</I>&gt;<i> join_time: 1234943545
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 110 status: 3
+</I>&gt;<i> join_time: 1234952988
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 131 status: 4
+</I>&gt;<i> join_time: 1235361927
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 116 status: 3
+</I>&gt;<i> join_time: 1235358194
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 49 status: 4
+</I>&gt;<i> join_time: 1235173219
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 117 status: 1
+</I>&gt;<i> join_time: 1235173529
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 118 status: 1
+</I>&gt;<i> join_time: 1235173572
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 119 status: 1
+</I>&gt;<i> join_time: 1235173596
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 120 status: 1
+</I>&gt;<i> join_time: 1235173630
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 132 status: 2
+</I>&gt;<i> join_time: 1235362373
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 6 status: 4
+</I>&gt;<i> join_time: 1234780171
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 138 status: 1
+</I>&gt;<i> join_time: 1235452443
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 61 status: 3
+</I>&gt;<i> join_time: 1234851989
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 51 status: 4
+</I>&gt;<i> join_time: 1234851922
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 129 status: 2
+</I>&gt;<i> join_time: 1235285401
+</I>&gt;<i> Feb 25 12:16:30 [trace] sql_load_clans: added member: uid: 137 status: 1
+</I>&gt;<i> join_time: 1235451962
+</I>&gt;<i> Feb 25 12:16:30 [trace] topiclist_load: start reading topic file
+</I>&gt;<i> Feb 25 12:16:30 [trace] topiclist_load: channel: AusCraft topic: &quot;I hope
+</I>&gt;<i> everyone likes the new serer name. Please visit the forums reguarly:
+</I>&gt;<i> <A HREF="http://infinate8.zapto.org:1337/forums/index.php">http://infinate8.zapto.org:1337/forums/index.php</A>&quot;
+</I>&gt;<i> Feb 25 12:16:30 [trace] topiclist_load: channel: Aus-1 topic: &quot;Vote for the
+</I>&gt;<i> server name! Click on the Aus-1 banner at the top or go to
+</I>&gt;<i> <A HREF="http://infinate8.zapto.org:1337/forums">http://infinate8.zapto.org:1337/forums</A>&quot;
+</I>&gt;<i> Feb 25 12:16:30 [trace] topiclist_load: channel: Moderated Support topic:
+</I>&gt;<i> &quot;Support is provided in this channel...&quot;
+</I>&gt;<i> Feb 25 12:16:30 [trace] topiclist_load: channel: Chat topic: &quot;This is the
+</I>&gt;<i> public chat channel. Feel free to chat...&quot;
+</I>&gt;<i> Feb 25 12:16:30 [trace] topiclist_load: finished reading topic file
+</I>&gt;<i> Feb 25 12:16:30 [info ] _setup_listensock: listening for bnet connections
+</I>&gt;<i> on 0.0.0.0:6112 TCP
+</I>&gt;<i> Feb 25 12:16:30 [info ] _setup_listensock: listening for w3route
+</I>&gt;<i> connections on 0.0.0.0:6200 TCP
+</I>&gt;<i> Feb 25 12:16:30 [debug] attrlayer_flush: flushed 1 user accounts
+</I>&gt;<i> Feb 25 12:16:30 [debug] attrlayer_flush: flushed 23 user accounts
+</I>&gt;<i> Feb 25 12:16:37 [debug] ipbanlist_check: lastcheck: 0, now: 1235526397,
+</I>&gt;<i> now-lc: 1235526397.
+</I>&gt;<i> Feb 25 12:16:37 [debug] ipbanlist_check: checking 192.168.1.100
+</I>&gt;<i> Feb 25 12:16:37 [info ] sd_accept: [10] accepted connection from
+</I>&gt;<i> 192.168.1.100:61170 on 0.0.0.0:6112
+</I>&gt;<i> Feb 25 12:16:37 [info ] conn_create: [10][8] sessionkey=0x222fffba
+</I>&gt;<i> sessionnum=0x00000000
+</I>&gt;<i> Feb 25 12:16:37 [debug] sd_accept: [10] client connected to a bnet
+</I>&gt;<i> listening address
+</I>&gt;<i> Feb 25 12:16:37 [info ] handle_init_packet: [10] client initiated bnet
+</I>&gt;<i> connection
+</I>&gt;<i> Feb 25 12:16:37 [trace] conn_shutdown: [10] connection allready closed
+</I>&gt;<i> Feb 25 12:16:37 [debug] conn_set_class: added latency check timer
+</I>&gt;<i> Feb 25 12:16:37 [debug] _client_countryinfo109: [10] COUNTRYINFO_109 packet
+</I>&gt;<i> tzbias=0xfffffd8a(-630) lcid=3081 langid=1033 arch=&quot;IX86&quot; client=&quot;W3XP&quot;
+</I>&gt;<i> versionid=0x00000016 gamelang=&quot;enUS&quot;
+</I>&gt;<i> Feb 25 12:16:37 [debug] _client_countryinfo109: [10] COUNTRYINFO_109 packet
+</I>&gt;<i> from &quot;Australia&quot; &quot;AUS&quot;
+</I>&gt;<i> Feb 25 12:16:37 [info ] conn_set_archtag: [10] setting client arch to
+</I>&gt;<i> &quot;IX86&quot;
+</I>&gt;<i> Feb 25 12:16:37 [info ] conn_set_clienttag: [10] setting client type to
+</I>&gt;<i> &quot;W3XP&quot;
+</I>&gt;<i> Feb 25 12:16:37 [info ] conn_set_gamelang: [10] setting client gamelang to
+</I>&gt;<i> &quot;enUS&quot;
+</I>&gt;<i> Feb 25 12:16:37 [debug] _client_countryinfo109: [10] selecting version
+</I>&gt;<i> check
+</I>&gt;<i> Feb 25 12:16:37 [debug] versioncheck_create: version check entry
+</I>&gt;<i> archtag=IX86, clienttag=W3XP
+</I>&gt;<i> Feb 25 12:16:37 [debug] _client_countryinfo109: [10] selected
+</I>&gt;<i> &quot;IX86ver1.mpq&quot; &quot;A=3845581634 B=880823580 C=1363937103 4 A=A-S B=B-C C=C-A
+</I>&gt;<i> A=A-B&quot;
+</I>&gt;<i> Feb 25 12:16:37 [debug] ipbanlist_check: lastcheck: 1235526397, now:
+</I>&gt;<i> 1235526397, now-lc: 0.
+</I>&gt;<i> Feb 25 12:16:37 [debug] ipbanlist_check: checking 192.168.1.100
+</I>&gt;<i> Feb 25 12:16:37 [info ] sd_accept: [11] accepted connection from
+</I>&gt;<i> 192.168.1.100:61171 on 0.0.0.0:6112
+</I>&gt;<i> Feb 25 12:16:37 [info ] conn_create: [11][8] sessionkey=0x2d9822b4
+</I>&gt;<i> sessionnum=0x00000001
+</I>&gt;<i> Feb 25 12:16:37 [debug] sd_accept: [11] client connected to a bnet
+</I>&gt;<i> listening address
+</I>&gt;<i> Feb 25 12:16:37 [info ] handle_init_packet: [11] client initiated file
+</I>&gt;<i> download connection
+</I>&gt;<i> Feb 25 12:16:37 [trace] conn_shutdown: [11] connection allready closed
+</I>&gt;<i> Feb 25 12:16:37 [info ] file_send: [11] sending file &quot;IX86ver1.mpq&quot; of
+</I>&gt;<i> length 6963
+</I>&gt;<i> Feb 25 12:16:37 [debug] sd_tcpinput: [11] read returned -1 (closing
+</I>&gt;<i> connection)
+</I>&gt;<i> Feb 25 12:16:37 [info ] conn_destroy: [11] closed file connection
+</I>&gt;<i> Feb 25 12:16:37 [info ] _client_authreq109: [10] CLIENT_AUTHREQ_109
+</I>&gt;<i> ticks=0x04ef00b5, verstr=1.22.0.184 exeinfo=&quot;war3.exe 06/27/08 00:01:35
+</I>&gt;<i> 471040&quot; versionid=0x00000016 gameversion=0x011600b8 checksum=0x909998db
+</I>&gt;<i> Feb 25 12:16:37 [info ] versioncheck_validate: got a matching entry:
+</I>&gt;<i> W3XP_122A
+</I>&gt;<i> Feb 25 12:16:37 [info ] _client_authreq109: [10] client matches versiontag
+</I>&gt;<i> &quot;W3XP_122A&quot;
+</I>&gt;<i> Feb 25 12:16:37 [info ] _client_authreq109: [10] no upgrade for W3XP_122A
+</I>&gt;<i> is available
+</I>&gt;<i> Feb 25 12:16:37 [info ] _client_fileinforeq: [10] TOS requested:
+</I>&gt;<i> &quot;termsofservice-enUS.txt&quot; - type = 0x01
+</I>&gt;<i> Feb 25 12:16:37 [info ] _client_fileinforeq: [10] TOS requested:
+</I>&gt;<i> &quot;newaccount-enUS.txt&quot; - type = 0x02
+</I>&gt;<i> Feb 25 12:16:37 [info ] _client_fileinforeq: [10] TOS requested:
+</I>&gt;<i> &quot;chathelp-war3-enUS.txt&quot; - type = 0x03
+</I>&gt;<i> Feb 25 12:16:37 [debug] ipbanlist_check: lastcheck: 1235526397, now:
+</I>&gt;<i> 1235526397, now-lc: 0.
+</I>&gt;<i> Feb 25 12:16:37 [debug] ipbanlist_check: checking 192.168.1.100
+</I>&gt;<i> Feb 25 12:16:37 [info ] sd_accept: [11] accepted connection from
+</I>&gt;<i> 192.168.1.100:61172 on 0.0.0.0:6112
+</I>&gt;<i> Feb 25 12:16:37 [info ] conn_create: [11][8] sessionkey=0x3d14668c
+</I>&gt;<i> sessionnum=0x00000002
+</I>&gt;<i> Feb 25 12:16:37 [debug] sd_accept: [11] client connected to a bnet
+</I>&gt;<i> listening address
+</I>&gt;<i> Feb 25 12:16:37 [info ] handle_init_packet: [11] client initiated file
+</I>&gt;<i> download connection
+</I>&gt;<i> Feb 25 12:16:37 [trace] conn_shutdown: [11] connection allready closed
+</I>&gt;<i> Feb 25 12:16:37 [debug] ipbanlist_check: lastcheck: 1235526397, now:
+</I>&gt;<i> 1235526397, now-lc: 0.
+</I>&gt;<i> Feb 25 12:16:37 [debug] ipbanlist_check: checking 192.168.1.100
+</I>&gt;<i> Feb 25 12:16:37 [info ] sd_accept: [12] accepted connection from
+</I>&gt;<i> 192.168.1.100:61173 on 0.0.0.0:6112
+</I>&gt;<i> Feb 25 12:16:37 [info ] conn_create: [12][8] sessionkey=0x634c2e97
+</I>&gt;<i> sessionnum=0x00000003
+</I>&gt;<i> Feb 25 12:16:37 [debug] sd_accept: [12] client connected to a bnet
+</I>&gt;<i> listening address
+</I>&gt;<i> Feb 25 12:16:37 [info ] handle_init_packet: [12] client initiated file
+</I>&gt;<i> download connection
+</I>&gt;<i> Feb 25 12:16:37 [trace] conn_shutdown: [12] connection allready closed
+</I>&gt;<i> Feb 25 12:16:37 [info ] file_send: [11] sending file
+</I>&gt;<i> &quot;termsofservice-enUS.txt&quot; of length 1402
+</I>&gt;<i> Feb 25 12:16:37 [info ] file_send: [12] sending file &quot;newaccount-enUS.txt&quot;
+</I>&gt;<i> of length 1402
+</I>&gt;<i> Feb 25 12:16:38 [debug] ipbanlist_check: lastcheck: 1235526397, now:
+</I>&gt;<i> 1235526398, now-lc: 1.
+</I>&gt;<i> Feb 25 12:16:38 [debug] ipbanlist_check: checking 192.168.1.100
+</I>&gt;<i> Feb 25 12:16:38 [info ] sd_accept: [13] accepted connection from
+</I>&gt;<i> 192.168.1.100:61174 on 0.0.0.0:6112
+</I>&gt;<i> Feb 25 12:16:38 [info ] conn_create: [13][8] sessionkey=0x6a2aa5f7
+</I>&gt;<i> sessionnum=0x00000004
+</I>&gt;<i> Feb 25 12:16:38 [debug] sd_accept: [13] client connected to a bnet
+</I>&gt;<i> listening address
+</I>&gt;<i> Feb 25 12:16:38 [debug] ipbanlist_check: lastcheck: 1235526397, now:
+</I>&gt;<i> 1235526398, now-lc: 1.
+</I>&gt;<i> Feb 25 12:16:38 [debug] ipbanlist_check: checking 192.168.1.100
+</I>&gt;<i> Feb 25 12:16:38 [info ] sd_accept: [14] accepted connection from
+</I>&gt;<i> 192.168.1.100:61175 on 0.0.0.0:6112
+</I>&gt;<i> Feb 25 12:16:38 [info ] conn_create: [14][8] sessionkey=0x74bfe264
+</I>&gt;<i> sessionnum=0x00000005
+</I>&gt;<i> Feb 25 12:16:38 [debug] sd_accept: [14] client connected to a bnet
+</I>&gt;<i> listening address
+</I>&gt;<i> Feb 25 12:16:38 [debug] sd_tcpinput: [11] read returned -1 (closing
+</I>&gt;<i> connection)
+</I>&gt;<i> Feb 25 12:16:38 [info ] conn_destroy: [11] closed file connection
+</I>&gt;<i> Feb 25 12:16:38 [debug] sd_tcpinput: [12] read returned -1 (closing
+</I>&gt;<i> connection)
+</I>&gt;<i> Feb 25 12:16:38 [info ] conn_destroy: [12] closed file connection
+</I>&gt;<i> Feb 25 12:16:38 [info ] handle_init_packet: [13] client initiated file
+</I>&gt;<i> download connection
+</I>&gt;<i> Feb 25 12:16:38 [trace] conn_shutdown: [13] connection allready closed
+</I>&gt;<i> Feb 25 12:16:38 [info ] handle_init_packet: [14] client initiated file
+</I>&gt;<i> download connection
+</I>&gt;<i> Feb 25 12:16:38 [trace] conn_shutdown: [14] connection allready closed
+</I>&gt;<i> Feb 25 12:16:38 [info ] file_send: [13] sending file
+</I>&gt;<i> &quot;chathelp-war3-enUS.txt&quot; of length 351
+</I>&gt;<i> Feb 25 12:16:38 [info ] file_send: [14] sending file &quot;icons-WAR3.bni&quot; of
+</I>&gt;<i> length 36931
+</I>&gt;<i> Feb 25 12:16:38 [debug] sd_tcpinput: [14] read returned -1 (closing
+</I>&gt;<i> connection)
+</I>&gt;<i> Feb 25 12:16:38 [info ] conn_destroy: [14] closed file connection
+</I>&gt;<i> Feb 25 12:16:38 [debug] sd_tcpinput: [13] read returned -1 (closing
+</I>&gt;<i> connection)
+</I>&gt;<i> Feb 25 12:16:38 [info ] conn_destroy: [13] closed file connection
+</I>&gt;<i> Feb 25 12:16:39 [info ] _client_fileinforeq: [10] TOS requested:
+</I>&gt;<i> &quot;bnserver-WAR3.ini&quot; - type = 0x05
+</I>&gt;<i> Feb 25 12:16:39 [debug] ipbanlist_check: lastcheck: 1235526397, now:
+</I>&gt;<i> 1235526399, now-lc: 2.
+</I>&gt;<i> Feb 25 12:16:39 [debug] ipbanlist_check: checking 192.168.1.100
+</I>&gt;<i> Feb 25 12:16:39 [info ] sd_accept: [11] accepted connection from
+</I>&gt;<i> 192.168.1.100:61176 on 0.0.0.0:6112
+</I>&gt;<i> Feb 25 12:16:39 [info ] conn_create: [11][8] sessionkey=0x6715fb2d
+</I>&gt;<i> sessionnum=0x00000006
+</I>&gt;<i> Feb 25 12:16:39 [debug] sd_accept: [11] client connected to a bnet
+</I>&gt;<i> listening address
+</I>&gt;<i> Feb 25 12:16:39 [info ] handle_init_packet: [11] client initiated file
+</I>&gt;<i> download connection
+</I>&gt;<i> Feb 25 12:16:39 [trace] conn_shutdown: [11] connection allready closed
+</I>&gt;<i> Feb 25 12:16:39 [info ] file_send: [11] sending file &quot;bnserver-WAR3.ini&quot; of
+</I>&gt;<i> length 376
+</I>&gt;<i> Feb 25 12:16:39 [debug] sd_tcpinput: [11] read returned -1 (closing
+</I>&gt;<i> connection)
+</I>&gt;<i> Feb 25 12:16:39 [info ] conn_destroy: [11] closed file connection
+</I>&gt;<i> Feb 25 12:16:42 [info ] _client_loginreqw3: [10] (W3) &quot;QQ&quot; passed account
+</I>&gt;<i> check (even though account has no salt)
+</I>&gt;<i> Feb 25 12:16:42 [info ] _client_logonproofreq: [10] logon proof requested
+</I>&gt;<i> Feb 25 12:16:42 [info ] _client_logonproofreq: [10] (W3) &quot;QQ&quot; logged in
+</I>&gt;<i> (right password)
+</I>&gt;<i> Feb 25 12:16:42 [debug] _client_anongame_infos: client_tag request
+</I>&gt;<i> tagid=(0x0) tag=(CLIENT_FINDANONGAME_INFOTAG_URL)  tag_unk=(0x0000)
+</I>&gt;<i> Feb 25 12:16:42 [debug] _client_anongame_infos: client_tag request
+</I>&gt;<i> tagid=(0x1) tag=(CLIENT_FINDANONGAME_INFOTAG_MAP)  tag_unk=(0x0000)
+</I>&gt;<i> Feb 25 12:16:42 [debug] _client_anongame_infos: client_tag request
+</I>&gt;<i> tagid=(0x2) tag=(CLIENT_FINDANONGAME_INFOTAG_TYPE) tag_unk=(0x0000)
+</I>&gt;<i> Feb 25 12:16:42 [debug] _client_anongame_infos: client_tag request
+</I>&gt;<i> tagid=(0x3) tag=(CLIENT_FINDANONGAME_INFOTAG_DESC) tag_unk=(0x0000)
+</I>&gt;<i> Feb 25 12:16:42 [debug] _client_anongame_infos: client_tag request
+</I>&gt;<i> tagid=(0x4) tag=(CLIENT_FINDANONGAME_INFOTAG_LADR) tag_unk=(0x0000)
+</I>&gt;<i> Feb 25 12:16:46 [trace] _client_motdw3: lastnews() 1235244966 news_time
+</I>&gt;<i> 1233516967
+</I>&gt;<i> Feb 25 12:16:51 [debug] account_get_highestladderlevel: Checking for
+</I>&gt;<i> highest level in Solo,Team,FFA,AT Ladder Stats
+</I>&gt;<i> Feb 25 12:16:51 [debug] account_get_highestladderlevel: Solo Level: 0, Team
+</I>&gt;<i> Level 0, FFA Level 0, Highest AT Team Level: 0
+</I>&gt;<i> Feb 25 12:16:51 [info ] conn_update_w3_playerinfo: [10] PX3W
+</I>&gt;<i> Feb 25 12:16:51 [info ] _client_joinchannel: [10]
+</I>&gt;<i> CLIENT_JOINCHANNEL_GENERIC channel &quot;W3&quot;
+</I>&gt;<i> Feb 25 12:16:51 [debug] channellist_find_channel_by_name: found permanent
+</I>&gt;<i> channel &quot;AusCraft&quot; for &quot;W3&quot;
+</I>&gt;<i> Feb 25 12:16:51 [info ] conn_set_channel: [10] joined channel &quot;AusCraft&quot;
+</I>&gt;<i> Feb 25 12:16:53 [debug] ipbanlist_check: lastcheck: 1235526397, now:
+</I>&gt;<i> 1235526413, now-lc: 16.
+</I>&gt;<i> Feb 25 12:16:53 [debug] ipbanlist_check: checking 192.168.1.100
+</I>&gt;<i> Feb 25 12:16:53 [info ] sd_accept: [11] accepted connection from
+</I>&gt;<i> 192.168.1.100:61177 on 0.0.0.0:6112
+</I>&gt;<i> Feb 25 12:16:53 [info ] conn_create: [11][8] sessionkey=0x3ce15bab
+</I>&gt;<i> sessionnum=0x00000007
+</I>&gt;<i> Feb 25 12:16:53 [debug] sd_accept: [11] client connected to a bnet
+</I>&gt;<i> listening address
+</I>&gt;<i> Feb 25 12:16:53 [info ] handle_init_packet: [11] client initiated file
+</I>&gt;<i> download connection
+</I>&gt;<i> Feb 25 12:16:53 [trace] conn_shutdown: [11] connection allready closed
+</I>&gt;<i> Feb 25 12:16:53 [info ] file_send: [11] sending file &quot;AusCraft.mng&quot; of
+</I>&gt;<i> length 61274
+</I>&gt;<i> Feb 25 12:16:53 [debug] sd_tcpinput: [11] read returned -1 (closing
+</I>&gt;<i> connection)
+</I>&gt;<i> Feb 25 12:16:53 [info ] conn_destroy: [11] closed file connection
+</I>&gt;<i> Feb 25 12:16:55 [debug] ipbanlist_check: lastcheck: 1235526397, now:
+</I>&gt;<i> 1235526415, now-lc: 18.
+</I>&gt;<i> Feb 25 12:16:55 [debug] ipbanlist_check: checking 127.0.1.1
+</I>&gt;<i> Feb 25 12:16:55 [info ] sd_accept: [11] accepted connection from
+</I>&gt;<i> 127.0.1.1:37345 on 0.0.0.0:6112
+</I>&gt;<i> Feb 25 12:16:55 [info ] conn_create: [11][8] sessionkey=0x1274d82d
+</I>&gt;<i> sessionnum=0x00000008
+</I>&gt;<i> Feb 25 12:16:55 [debug] sd_accept: [11] client connected to a bnet
+</I>&gt;<i> listening address
+</I>&gt;<i> Feb 25 12:16:55 [info ] handle_init_packet: [11] client initiated bnet
+</I>&gt;<i> connection
+</I>&gt;<i> Feb 25 12:16:55 [trace] conn_shutdown: [11] connection allready closed
+</I>&gt;<i> Feb 25 12:16:55 [debug] conn_set_class: added latency check timer
+</I>&gt;<i> Feb 25 12:16:55 [debug] handle_udp_packet: [8] got UDPTEST packet from
+</I>&gt;<i> 127.0.1.1:6112 (myself?)
+</I>&gt;<i> Feb 25 12:16:55 [debug] _client_countryinfo109: [11] COUNTRYINFO_109 packet
+</I>&gt;<i> tzbias=0x012c(+300) lcid=1033 langid=1033 arch=&quot;IX86&quot; client=&quot;W3XP&quot;
+</I>&gt;<i> versionid=0x00000016 gamelang=&quot;enUS&quot;
+</I>&gt;<i> Feb 25 12:16:55 [debug] _client_countryinfo109: [11] COUNTRYINFO_109 packet
+</I>&gt;<i> from &quot;United States&quot; &quot;USA&quot;
+</I>&gt;<i> Feb 25 12:16:55 [info ] conn_set_archtag: [11] setting client arch to
+</I>&gt;<i> &quot;IX86&quot;
+</I>&gt;<i> Feb 25 12:16:55 [info ] conn_set_clienttag: [11] setting client type to
+</I>&gt;<i> &quot;W3XP&quot;
+</I>&gt;<i> Feb 25 12:16:55 [info ] conn_set_gamelang: [11] setting client gamelang to
+</I>&gt;<i> &quot;enUS&quot;
+</I>&gt;<i> Feb 25 12:16:55 [debug] _client_countryinfo109: [11] selecting version
+</I>&gt;<i> check
+</I>&gt;<i> Feb 25 12:16:55 [debug] versioncheck_create: version check entry
+</I>&gt;<i> archtag=IX86, clienttag=W3XP
+</I>&gt;<i> Feb 25 12:16:55 [debug] _client_countryinfo109: [11] selected
+</I>&gt;<i> &quot;IX86ver1.mpq&quot; &quot;A=3845581634 B=880823580 C=1363937103 4 A=A-S B=B-C C=C-A
+</I>&gt;<i> A=A-B&quot;
+</I>&gt;<i> Feb 25 12:16:55 [debug] handle_udp_packet: [8] got UDPTEST packet from
+</I>&gt;<i> 127.0.1.1:6112 (myself?)
+</I>&gt;<i> Feb 25 12:16:55 [info ] _client_authreq109: [11] CLIENT_AUTHREQ_109
+</I>&gt;<i> ticks=0x07cb01dc, verstr=1.22.0.184 exeinfo=&quot;war3.exe 01/18/109 06:32:43
+</I>&gt;<i> 471040&quot; versionid=0x00000016 gameversion=0x011600b8 checksum=0x909998db
+</I>&gt;<i> Feb 25 12:16:55 [info ] versioncheck_validate: bad exeinfo, closest match
+</I>&gt;<i> is: W3XP_122A
+</I>&gt;<i> Feb 25 12:16:55 [info ] _client_authreq109: [11] client failed test,
+</I>&gt;<i> allowing anyway
+</I>&gt;<i> Feb 25 12:16:55 [info ] _client_authreq109: [11] client matches versiontag
+</I>&gt;<i> &quot;W3XP_122A&quot;
+</I>&gt;<i> Feb 25 12:16:55 [info ] _client_authreq109: [11] no upgrade for W3XP_122A
+</I>&gt;<i> is available
+</I>&gt;<i> Feb 25 12:16:55 [info ] _client_loginreqw3: [11] (W3) &quot;Aus-1_GHost&quot; passed
+</I>&gt;<i> account check (even though account has no salt)
+</I>&gt;<i> Feb 25 12:16:55 [info ] _client_logonproofreq: [11] logon proof requested
+</I>&gt;<i> Feb 25 12:16:55 [info ] _client_logonproofreq: [11] (W3) &quot;Aus-1_GHost&quot;
+</I>&gt;<i> logged in (right password)
+</I>&gt;<i> Feb 25 12:16:55 [debug] account_get_highestladderlevel: Checking for
+</I>&gt;<i> highest level in Solo,Team,FFA,AT Ladder Stats
+</I>&gt;<i> Feb 25 12:16:55 [debug] account_get_highestladderlevel: Solo Level: 0, Team
+</I>&gt;<i> Level 0, FFA Level 0, Highest AT Team Level: 0
+</I>&gt;<i> Feb 25 12:16:55 [info ] conn_update_w3_playerinfo: [11] PX3W
+</I>&gt;<i> Feb 25 12:16:55 [info ] _client_joinchannel: [11] CLIENT_JOINCHANNEL_CREATE
+</I>&gt;<i> channel &quot;AusCraft&quot;
+</I>&gt;<i> Feb 25 12:16:55 [info ] _client_joinchannel: [11] CLIENT_JOINCHANNEL_CREATE
+</I>&gt;<i> channel &quot;AusCraft&quot;
+</I>&gt;<i> Feb 25 12:16:55 [info ] conn_set_channel: [11] joined channel &quot;AusCraft&quot;
+</I>&gt;<i> Feb 25 12:18:04 [debug] ipbanlist_check: lastcheck: 1235526397, now:
+</I>&gt;<i> 1235526484, now-lc: 87.
+</I>&gt;<i> Feb 25 12:18:04 [debug] ipbanlist_check: checking 210.49.182.88
+</I>&gt;<i> Feb 25 12:18:04 [info ] sd_accept: [12] accepted connection from
+</I>&gt;<i> 210.49.182.88:50080 on 0.0.0.0:6112
+</I>&gt;<i> Feb 25 12:18:04 [info ] conn_create: [12][8] sessionkey=0x2f4bf8b9
+</I>&gt;<i> sessionnum=0x00000009
+</I>&gt;<i> Feb 25 12:18:04 [debug] sd_accept: [12] client connected to a bnet
+</I>&gt;<i> listening address
+</I>&gt;<i> Feb 25 12:18:05 [info ] handle_init_packet: [12] client initiated bnet
+</I>&gt;<i> connection
+</I>&gt;<i> Feb 25 12:18:05 [trace] conn_shutdown: [12] connection allready closed
+</I>&gt;<i> Feb 25 12:18:05 [debug] conn_set_class: added latency check timer
+</I>&gt;<i> Feb 25 12:18:05 [debug] _client_countryinfo109: [12] COUNTRYINFO_109 packet
+</I>&gt;<i> tzbias=0xfffffd6c(-660) lcid=3081 langid=3081 arch=&quot;IX86&quot; client=&quot;SEXP&quot;
+</I>&gt;<i> versionid=0x000000cb gamelang=&quot;UNKN&quot;
+</I>&gt;<i> Feb 25 12:18:05 [debug] _client_countryinfo109: [12] COUNTRYINFO_109 packet
+</I>&gt;<i> from &quot;United States&quot; &quot;USA&quot;
+</I>&gt;<i> Feb 25 12:18:05 [info ] conn_set_archtag: [12] setting client arch to
+</I>&gt;<i> &quot;IX86&quot;
+</I>&gt;<i> Feb 25 12:18:05 [info ] conn_set_clienttag: [12] setting client type to
+</I>&gt;<i> &quot;SEXP&quot;
+</I>&gt;<i> Feb 25 12:18:05 [debug] _client_countryinfo109: [12] selecting version
+</I>&gt;<i> check
+</I>&gt;<i> Feb 25 12:18:05 [debug] versioncheck_create: version check entry
+</I>&gt;<i> archtag=IX86, clienttag=W3XP
+</I>&gt;<i> Feb 25 12:18:05 [debug] versioncheck_create: version check entry
+</I>&gt;<i> archtag=IX86, clienttag=WAR3
+</I>&gt;<i> Feb 25 12:18:05 [debug] versioncheck_create: version check entry
+</I>&gt;<i> archtag=IX86, clienttag=D2XP
+</I>&gt;<i> Feb 25 12:18:05 [debug] versioncheck_create: version check entry
+</I>&gt;<i> archtag=IX86, clienttag=D2DV
+</I>&gt;<i> Feb 25 12:18:05 [debug] versioncheck_create: version check entry
+</I>&gt;<i> archtag=IX86, clienttag=D2XP
+</I>&gt;<i> Feb 25 12:18:05 [debug] versioncheck_create: version check entry
+</I>&gt;<i> archtag=IX86, clienttag=D2DV
+</I>&gt;<i> Feb 25 12:18:05 [debug] versioncheck_create: version check entry
+</I>&gt;<i> archtag=IX86, clienttag=D2XP
+</I>&gt;<i> Feb 25 12:18:05 [debug] versioncheck_create: version check entry
+</I>&gt;<i> archtag=IX86, clienttag=D2DV
+</I>&gt;<i> Feb 25 12:18:05 [debug] versioncheck_create: version check entry
+</I>&gt;<i> archtag=IX86, clienttag=D2XP
+</I>&gt;<i> Feb 25 12:18:05 [debug] versioncheck_create: version check entry
+</I>&gt;<i> archtag=IX86, clienttag=D2DV
+</I>&gt;<i> Feb 25 12:18:05 [debug] versioncheck_create: version check entry
+</I>&gt;<i> archtag=IX86, clienttag=D2XP
+</I>&gt;<i> Feb 25 12:18:05 [debug] versioncheck_create: version check entry
+</I>&gt;<i> archtag=IX86, clienttag=D2DV
+</I>&gt;<i> Feb 25 12:18:05 [debug] versioncheck_create: version check entry
+</I>&gt;<i> archtag=IX86, clienttag=SEXP
+</I>&gt;<i> Feb 25 12:18:05 [debug] _client_countryinfo109: [12] selected
+</I>&gt;<i> &quot;ver-ix86-1.mpq&quot; &quot;A=2521522835 B=3428392135 C=218673704 4 A=A^S B=B-C C=C+A
+</I>&gt;<i> A=A-B&quot;
+</I>&gt;<i> Feb 25 12:18:05 [info ] _client_authreq109: [12] CLIENT_AUTHREQ_109
+</I>&gt;<i> ticks=0x00c38335, verstr=1.15.2.1 exeinfo=&quot;Starcraft.exe 05/24/08 03:37:21
+</I>&gt;<i> 1220608&quot; versionid=0x000000cb gameversion=0x010f0201 checksum=0x5e75d9d5
+</I>&gt;<i> Feb 25 12:18:05 [info ] versioncheck_validate: no match in list, setting
+</I>&gt;<i> to: SEXP
+</I>&gt;<i> Feb 25 12:18:05 [info ] _client_authreq109: [12] unable to test client,
+</I>&gt;<i> allowing anyway
+</I>&gt;<i> Feb 25 12:18:05 [info ] _client_authreq109: [12] client matches versiontag
+</I>&gt;<i> &quot;SEXP&quot;
+</I>&gt;<i> Feb 25 12:18:05 [info ] _client_authreq109: [12] no upgrade for SEXP is
+</I>&gt;<i> available
+</I>&gt;<i> Feb 25 12:18:05 [debug] dispatch_whisper: notified 1 friends about SYUNIXT
+</I>&gt;<i> Feb 25 12:18:05 [info ] _client_loginreq2: [12] &quot;SYUNIXT&quot; logged in
+</I>&gt;<i> (correct password)
+</I>&gt;<i> Feb 25 12:18:05 [error] handle_bnet_packet: [12] unknown (logged in) bnet
+</I>&gt;<i> packet type 0x14ff, len 8
+</I>&gt;<i> Feb 25 12:18:05 [error] handle_bnet_packet: [12] unknown (logged in) bnet
+</I>&gt;<i> packet type 0x2dff, len 4
+</I>&gt;<i> Feb 25 12:18:05 [debug] _client_progident2: [12] CLIENT_PROGIDENT2
+</I>&gt;<i> clienttag=0x53455850
+</I>&gt;<i> Feb 25 12:18:05 [info ] conn_set_channel: [12] joined channel &quot;AusCraft&quot;
+</I>&gt;<i> Feb 25 12:18:05 [info ] conn_send_welcome: motd file
+</I>&gt;<i> /home/pvpgn/etc/bnmotd-12:18&#207;&#243;  .txt not found, sending default motd file
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> pvpgn-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/pvpgn-users">pvpgn-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/pvpgn-users">https://lists.berlios.de/mailman/listinfo/pvpgn-users</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/pvpgn-users/attachments/20090225/923a55d6/attachment.html">https://lists.berlios.de/pipermail/pvpgn-users/attachments/20090225/923a55d6/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000052.html">[pvpgn-users] [PVPGN SVN 1.99-548] MOTD bug
+</A></li>
+	<LI>Next message: <A HREF="000054.html">[pvpgn-users] [PVPGN SVN 1.99-548] MOTD bug
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#53">[ date ]</a>
+              <a href="thread.html#53">[ thread ]</a>
+              <a href="subject.html#53">[ subject ]</a>
+              <a href="author.html#53">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/pvpgn-users">More information about the pvpgn-users
+mailing list</a><br>
+</body></html>

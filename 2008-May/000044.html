@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [pvpgn-users] address_translation or other???
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/pvpgn-users/2008-May/index.html" >
+   <LINK REL="made" HREF="mailto:pvpgn-users%40lists.berlios.de?Subject=Re%3A%20%5Bpvpgn-users%5D%20address_translation%20or%20other%3F%3F%3F&In-Reply-To=%3C016301c8ba84%2427107ae0%24c700a8c0%40p4mindaugo%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000043.html">
+   <LINK REL="Next"  HREF="000045.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[pvpgn-users] address_translation or other???</H1>
+    <B>Mindaugas Rudgalvis</B> 
+    <A HREF="mailto:pvpgn-users%40lists.berlios.de?Subject=Re%3A%20%5Bpvpgn-users%5D%20address_translation%20or%20other%3F%3F%3F&In-Reply-To=%3C016301c8ba84%2427107ae0%24c700a8c0%40p4mindaugo%3E"
+       TITLE="[pvpgn-users] address_translation or other???">mindaugas at balticum-tv.lt
+       </A><BR>
+    <I>Tue May 20 16:16:53 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000043.html">[pvpgn-users] address_translation or other???
+</A></li>
+        <LI>Next message: <A HREF="000045.html">[pvpgn-users] address_translation or other???
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#44">[ date ]</a>
+              <a href="thread.html#44">[ thread ]</a>
+              <a href="subject.html#44">[ subject ]</a>
+              <a href="author.html#44">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+Your pvpgn server is running on gateway machine? If so, then, have you redirected 6118 port of your external IP  on server to 192.168.0.15:6112 in ipnat?
+for ex:
+rdr interface external_ip/32 port 6118 -&gt; 192.168.0.15 port 6112 tcp
+rdr interface external_ip/32 port 6118 -&gt; 192.168.0.15 port 6112 udp
+
+And I think the configuration line in address_translation.conf should be the next:
+192.168.0.15:6112    external_IP:6118    192.168.0.0/24 ANY
+
+
+
+  ----- Original Message ----- 
+  From: Cedric Labina 
+  To: <A HREF="https://lists.berlios.de/mailman/listinfo/pvpgn-users">pvpgn-users at lists.berlios.de</A> 
+  Sent: Tuesday, May 20, 2008 4:40 PM
+  Subject: [pvpgn-users] address_translation or other???
+
+
+  Hello, for beginning i'm french so sorry for my bad english.
+
+  I have a gateway like this:
+
+  192.168.0.15 my PC
+  |
+  |
+  192.168.0.10 server internal ip
+  ---PVPGN 1.8.2 BnetD Mod (from source) FreeBSD 7.0 with ipf and ipnat
+  80.69.-.-- server external ip
+
+
+  netstat -an: Local Address Foreign Address
+  Proto Recv-Q Send-Q Local Address Foreign Address (state)
+  tcp4 0 0 *.6112 *.* LISTEN
+  tcp4 0 0 *.6200 *.* LISTEN
+  udp4 0 0 *.6112 *.*
+  tcp4 * * 80.69.-.--:6112 192.168.0.15:6112 ESTABLISHED
+
+  firewall : out = port 1024&gt;&lt; 65535 ; in = 4000,4005,6112,6113,6118,6200
+
+  address_translation.conf :
+  0.0.0.0:6200 80.69.-.--:6200 NONE ANY
+  192.168.0.15:6112 80.69.-.--:6118 NONE ANY
+  0.0.0.0:6113 80.69.-.--:6113 NONE ANY
+  0.0.0.0:4000 80.69.-.--:4000 NONE ANY
+  0.0.0.0:4005 80.69.-.--:4005 NONE ANY
+
+  bnetd.conf :
+  servaddrs = &quot;:&quot;
+  udptest_port = 6112
+  w3routeaddr = &quot;0.0.0.0:6200&quot;
+
+  I can chat with other, but when i play i'm always disconnect
+  immediatelly! I search in Google and Forum about my problem, but
+  nothing... :(
+  I have already install other server like cs 1.6, warsow, cod4, it's the
+  first can resist me!
+
+  Please help me i'm completely lost!
+
+
+
+
+------------------------------------------------------------------------------
+  Tous vos amis discutent sur Messenger, et vous ? T&#233;l&#233;chargez Messenger, c'est gratuit ! 
+
+
+------------------------------------------------------------------------------
+
+
+  _______________________________________________
+  pvpgn-users mailing list
+  <A HREF="https://lists.berlios.de/mailman/listinfo/pvpgn-users">pvpgn-users at lists.berlios.de</A>
+  <A HREF="https://lists.berlios.de/mailman/listinfo/pvpgn-users">https://lists.berlios.de/mailman/listinfo/pvpgn-users</A>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/pvpgn-users/attachments/20080520/54d1601b/attachment.html">https://lists.berlios.de/pipermail/pvpgn-users/attachments/20080520/54d1601b/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000043.html">[pvpgn-users] address_translation or other???
+</A></li>
+	<LI>Next message: <A HREF="000045.html">[pvpgn-users] address_translation or other???
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#44">[ date ]</a>
+              <a href="thread.html#44">[ thread ]</a>
+              <a href="subject.html#44">[ subject ]</a>
+              <a href="author.html#44">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/pvpgn-users">More information about the pvpgn-users
+mailing list</a><br>
+</body></html>

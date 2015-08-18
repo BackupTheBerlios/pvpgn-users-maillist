@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [pvpgn-users] Broodwar 1.15 Version check
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/pvpgn-users/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:pvpgn-users%40lists.berlios.de?Subject=Re%3A%20%5Bpvpgn-users%5D%20Broodwar%201.15%20Version%20check&In-Reply-To=%3C7C52A4A9-9DD2-4D8E-A51D-727CB1AE4A9F%40paradise.net.nz%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000031.html">
+   <LINK REL="Next"  HREF="000033.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[pvpgn-users] Broodwar 1.15 Version check</H1>
+    <B>David Wilson</B> 
+    <A HREF="mailto:pvpgn-users%40lists.berlios.de?Subject=Re%3A%20%5Bpvpgn-users%5D%20Broodwar%201.15%20Version%20check&In-Reply-To=%3C7C52A4A9-9DD2-4D8E-A51D-727CB1AE4A9F%40paradise.net.nz%3E"
+       TITLE="[pvpgn-users] Broodwar 1.15 Version check">dgwilson at paradise.net.nz
+       </A><BR>
+    <I>Wed Jul  4 07:53:06 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000031.html">[pvpgn-users] Broodwar 1.15 Version check
+</A></li>
+        <LI>Next message: <A HREF="000033.html">[pvpgn-users] Broodwar 1.15 Version check
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#32">[ date ]</a>
+              <a href="thread.html#32">[ thread ]</a>
+              <a href="subject.html#32">[ subject ]</a>
+              <a href="author.html#32">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I posted this a while ago...
+
+Err... Couldn't access forums.pvpgn.org
+
+thought that people would appreciate this post
+
+If on Windows, paste the text below into a xxx.bat file and run from  
+your &quot;files&quot; directory
+..\bnftp --client=SEXP --arch=IX86 --file=SEXP_IX86_1xx_115.mpq  
+useast.battle.net 6112
+..\bnftp --client=STAR --arch=IX86 --file=STAR_IX86_1xx_115.mpq  
+useast.battle.net 6112
+..\bnftp --client=SEXP --arch=XMAC --file=SEXP_XMAC_1xx_115.mpq  
+useast.battle.net 6112
+..\bnftp --client=STAR --arch=XMAC --file=STAR_XMAC_1xx_115.mpq  
+useast.battle.net 6112
+..\bnftp --client=SEXP --arch=PMAC --file=SEXP_PMAC_1xx_115.mpq  
+useast.battle.net 6112
+..\bnftp --client=STAR --arch=PMAC --file=STAR_PMAC_1xx_115.mpq  
+useast.battle.net 6112
+
+
+Add these entries to your versioncheck.conf file
+
+# New 16 May 2007
+# Starcraft Broodwar (Expansion) 1.14 - (Broodwar mode) - WINDOWS
+&quot;A=2521522835 B=3428392135 C=218673704 4 A=A^S B=B-C C=C+A A=A-B&quot; \
+&quot;IX86ver1.mpq&quot; \
+IX86 \
+SEXP \
+&quot;StarCraft.exe 05/08/07 19:13:26 1220608&quot; \
+0x000000d1 \
+0x010f0001 \
+0xc9ca8bc3 \
+SEXP_115
+
+
+# New 16 May 2007
+# StarCraft - Broodwar (Expansion) 1.15 - (Broodwar Mode) MacOS X
+&quot;A=2521522835 B=3428392135 C=218673704 4 A=A^S B=B-C C=C+A A=A-B&quot; \
+&quot;XMACver1.mpq&quot; \
+XMAC \
+SEXP \
+&quot;Starcraft (Carbon) 05/08/107 15:40:00 1400487&quot; \
+0x000000d1 \
+0x010f0001 \
+0xe02b5360 \
+SEXP_115
+
+
+Change your autoupdate.conf file as you need.
+
+
+
+- David
+
+
+On 4/07/2007, at 12:13 PM, Fernando wrote:
+
+&gt;<i> Anyone have the version check for Broodwar 1.15 ?
+</I>&gt;<i>
+</I>&gt;<i> I tried to make one myself, but failed miserably.
+</I>&gt;<i>
+</I>&gt;<i> __________________________________________________
+</I>&gt;<i> Fa&#231;a liga&#231;&#245;es para outros computadores com o novo Yahoo! Messenger
+</I>&gt;<i> <A HREF="http://br.beta.messenger.yahoo.com/">http://br.beta.messenger.yahoo.com/</A>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> pvpgn-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/pvpgn-users">pvpgn-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/pvpgn-users">https://lists.berlios.de/mailman/listinfo/pvpgn-users</A>
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/pvpgn-users/attachments/20070704/f810065c/attachment.html">https://lists.berlios.de/pipermail/pvpgn-users/attachments/20070704/f810065c/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000031.html">[pvpgn-users] Broodwar 1.15 Version check
+</A></li>
+	<LI>Next message: <A HREF="000033.html">[pvpgn-users] Broodwar 1.15 Version check
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#32">[ date ]</a>
+              <a href="thread.html#32">[ thread ]</a>
+              <a href="subject.html#32">[ subject ]</a>
+              <a href="author.html#32">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/pvpgn-users">More information about the pvpgn-users
+mailing list</a><br>
+</body></html>

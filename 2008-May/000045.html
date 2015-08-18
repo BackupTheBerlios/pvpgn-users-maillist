@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [pvpgn-users] address_translation or other???
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/pvpgn-users/2008-May/index.html" >
+   <LINK REL="made" HREF="mailto:pvpgn-users%40lists.berlios.de?Subject=Re%3A%20%5Bpvpgn-users%5D%20address_translation%20or%20other%3F%3F%3F&In-Reply-To=%3CBAY114-W1081064D9FB167E896079687C70%40phx.gbl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000044.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[pvpgn-users] address_translation or other???</H1>
+    <B>Cedric Labina</B> 
+    <A HREF="mailto:pvpgn-users%40lists.berlios.de?Subject=Re%3A%20%5Bpvpgn-users%5D%20address_translation%20or%20other%3F%3F%3F&In-Reply-To=%3CBAY114-W1081064D9FB167E896079687C70%40phx.gbl%3E"
+       TITLE="[pvpgn-users] address_translation or other???">mitik974 at hotmail.com
+       </A><BR>
+    <I>Wed May 21 06:47:26 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000044.html">[pvpgn-users] address_translation or other???
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#45">[ date ]</a>
+              <a href="thread.html#45">[ thread ]</a>
+              <a href="subject.html#45">[ subject ]</a>
+              <a href="author.html#45">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Thank you very much i changed my configuration and now everything works:
+ipnat.conf :
+rdr nfe0 80.69.-.-- port 6118 -&gt; 192.168.0.15 port 6112 tcp
+rdr nfe0 80.69.-.-- port 6118 -&gt; 192.168.0.15 port 6112 udp
+
+address_translation.conf :
+0.0.0.0:6200    192.168.0.10:6200       NONE    192.168.0.0/24
+0.0.0.0:6200    80.69.-.--:6200      NONE    ANY
+192.168.0.15:6112       80.69.-.--:6118      192.168.0.0/24  ANY
+
+You were quick to find the problem, thank you so much! You save me.
+
+
+_________________________________________________________________
+Lancez des recherches en toute s&#233;curit&#233; depuis n'importe quelle page Web. T&#233;l&#233;chargez GRATUITEMENT Windows Live Toolbar aujourd'hui !
+<A HREF="http://toolbar.live.com">http://toolbar.live.com</A>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/pvpgn-users/attachments/20080521/e5067b01/attachment.html">https://lists.berlios.de/pipermail/pvpgn-users/attachments/20080521/e5067b01/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000044.html">[pvpgn-users] address_translation or other???
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#45">[ date ]</a>
+              <a href="thread.html#45">[ thread ]</a>
+              <a href="subject.html#45">[ subject ]</a>
+              <a href="author.html#45">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/pvpgn-users">More information about the pvpgn-users
+mailing list</a><br>
+</body></html>

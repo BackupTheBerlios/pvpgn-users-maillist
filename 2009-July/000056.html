@@ -1,0 +1,517 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [pvpgn-users] problem with create a game (DOTA) at PVPGN server
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/pvpgn-users/2009-July/index.html" >
+   <LINK REL="made" HREF="mailto:pvpgn-users%40lists.berlios.de?Subject=Re%3A%20%5Bpvpgn-users%5D%20problem%20with%20create%20a%20game%20%28DOTA%29%20at%20PVPGN%20server&In-Reply-To=%3C200907091529.51821.greq84%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[pvpgn-users] problem with create a game (DOTA) at PVPGN server</H1>
+    <B>grek</B> 
+    <A HREF="mailto:pvpgn-users%40lists.berlios.de?Subject=Re%3A%20%5Bpvpgn-users%5D%20problem%20with%20create%20a%20game%20%28DOTA%29%20at%20PVPGN%20server&In-Reply-To=%3C200907091529.51821.greq84%40gmail.com%3E"
+       TITLE="[pvpgn-users] problem with create a game (DOTA) at PVPGN server">greq84 at gmail.com
+       </A><BR>
+    <I>Thu Jul  9 15:29:51 CEST 2009</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#56">[ date ]</a>
+              <a href="thread.html#56">[ thread ]</a>
+              <a href="subject.html#56">[ subject ]</a>
+              <a href="author.html#56">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi
+I have a problem to create a new game at PVPGN Server
+Me ,and my friends we can connect to PVPGN server ,but when somebody will 
+create a new game, other people see this one but cannot connect to them.
+
+We have 2 servers. One with internet and all the people are connected with LAN 
+to them with IP 149.156.157.xx  ...clients have IP from DHCP 100.200.0.0/24
+and we have a server ,where we have games, apache and others with IP 10.1.12.2
+When we play at lan with a games we just connect to 10.1.12.2
+at this server also we run PVPGN Server. 
+
+this is part of my bnetd.conf
+
+##############################################################################
+# Server network info                                                        #
+#----------------------------------------------------------------------------#
+
+# Servername by which the server identifies itself (default: &quot;PvPGN Realm&quot;)
+#servername = &quot;PvPGN Realm&quot;
+
+# Set this to the maximum number of concurrent connections allowed on 
+# this server (minimum 32). This limit sets a general server connection 
+# limit, NOT the concurrent user limit (for that see next option)
+max_connections = 1000
+
+# Maximum number of concurrent users (0 means unlimited).
+max_concurrent_logins = 0
+
+# Set this option to true to allow TCP to detect and close stale
+# connections.
+use_keepalive = false
+
+# Limit maximum number of connections per IP (0 = unlimited)
+# this feature is new, so no recommended value so far
+max_conns_per_IP = 0
+
+# This is a comma delimited list of hostnames that the server should
+# listen on.  It might be useful to make an internal-only server on a
+# gateway machine for example.  If the list is not set or if it has a
+# entry with no host component, the server will bind to that port on all
+# interfaces.
+#servaddrs = &quot;:9999&quot;
+#servaddrs = &quot;myinternalname.some.com,localhost&quot;
+servaddrs = &quot;:&quot; # default interface (all) and default port (6112)
+
+# Don't change these unless you really need to!  You will need to run a proxy
+# or modify the clients.  Also note that these will not change when simply
+# sending a HUP signal to the server; they are only read on startup.
+
+# This is the port the server send the UDP test packets to by default.
+# Setting it to zero makes the server use the same port as the TCP connection
+# comes from. Newer clients can override this setting on a per connection
+# basis.
+udptest_port = 6112
+
+
+# W3 Play Game router address. Just put your server address in here
+# or use 0.0.0.0:6200 for server to bind to all interfaces,
+# but make sure you set up w3trans if you do.
+w3routeaddr = &quot;0.0.0.0:6200&quot;
+
+# w3routeshow has been removed.
+# see the address_translation.conf for translating the w3route ip for local 
+networks
+
+# initkill_timer sets up a periodic timer on init/defer class connections
+# this should detect and clean up stale connections to your server
+initkill_timer = 120
+
+
+address_translation.conf
+
+#######################################################################################################
+# w3route server ip (removed from w3trans.conf) (Port 6200)                                            
+#
+#                                                                                                      
+#
+# Set input address the same as the w3routeaddr setting in the bnetd.conf                              
+#
+# Set output address to the address to be sent to war3 clients                                         
+#
+# Set exclude to the range of clients you want to recieve the input address                            
+#
+#    instead of the output address                                                                     
+#
+# Set include to the range of clients you want to recieve the output address                           
+#
+#                                                                                                      
+#
+#   input (ip:port)	   output (ip:port)	    exclude (ip/netmask)	include 
+(ip/netmask)   #
+#---------------------	----------------------	----------------------------  
+-------------------------#
+
+#0.0.0.0:6200		192.168.1.100:6200	NONE				192.168.1.0/24
+0.0.0.0:6200		10.1.12.2:6200     NONE            	100.200.0.0/24
+0.0.0.0:6200		149.156.157:6200     NONE            	ANY
+
+and this is my bnetd.log
+
+Jul 09 13:09:51 [trace] ladders_load_accounts_to_ladderlists: everything went 
+smooth... taking shortcut
+Jul 09 13:09:51 [info ] ladder_update_all_accounts: updating ranking for all 
+accounts
+Jul 09 13:09:52 [info ] ladder_update_all_accounts: finished updating ranking 
+for all accounts
+Jul 09 13:09:52 [info ] tracker_set_servers: tracking packets will be sent to 
+208.100.53.121:6114
+Jul 09 13:09:52 [info ] aliasfile_load: done loading aliases
+Jul 09 13:09:52 [debug] trans_load: Adding Host -&gt; 0.0.0.0:6200, Output -&gt; 
+10.1.12.2:6200, Network 100.200.0.0/0xffffff00 - (include)
+Jul 09 13:09:52 [debug] trans_load: Adding Host -&gt; 0.0.0.0:6200, Output -&gt; 
+149.156.0.157:6200, Network 0.0.0.0/0x00000000 - (include)
+Jul 09 13:09:52 [info ] trans_load: trans file loaded
+Jul 09 13:09:52 [trace] tournament_init: added tournament map 
+&quot;Maps\(8)Battleground.w3m&quot; for WAR3
+Jul 09 13:09:52 [trace] tournament_init: added tournament map 
+&quot;Maps\(8)PlainsOfSnow.w3m&quot; for WAR3
+Jul 09 13:09:52 [trace] tournament_init: added tournament map 
+&quot;Maps\(8)BloodvenomFalls.w3m&quot; for WAR3
+Jul 09 13:09:52 [trace] tournament_init: added tournament map 
+&quot;Maps\(8)GardenOfWar.w3m&quot; for WAR3
+Jul 09 13:09:52 [trace] tournament_init: added tournament map 
+&quot;Maps\FrozenThrone\(8)Mur'gulOasis.w3x&quot; for W3XP
+Jul 09 13:09:52 [trace] tournament_init: added tournament map 
+&quot;Maps\FrozenThrone\(8)PlainsOfSnow.w3x&quot; for W3XP
+Jul 09 13:09:52 [trace] tournament_init: added tournament map 
+&quot;Maps\FrozenThrone\(8)RockQuarry.w3x&quot; for W3XP
+Jul 09 13:09:52 [trace] tournament_init: added tournament map 
+&quot;Maps\FrozenThrone\(8)Sanctuary.w3x&quot; for W3XP
+Jul 09 13:09:52 [info ] anongame_infos_load: got langID: []
+Jul 09 13:09:52 [info ] anongame_infos_load: got langID: [deDE]
+Jul 09 13:09:52 [info ] anongame_infos_load: got langID: [zhCN]
+Jul 09 13:09:52 [info ] anongame_infos_load: got langID: [ruRU]
+Jul 09 13:09:52 [trace] file_load_clans: start reading clans
+Jul 09 13:09:52 [trace] file_load_clans: finished reading clans
+Jul 09 13:09:52 [trace] file_load_teams: start reading teams
+Jul 09 13:09:52 [trace] file_load_teams: finished reading teams
+Jul 09 13:09:52 [info ] realm_create: created realm &quot;D2CS&quot;
+Jul 09 13:09:52 [trace] topiclist_load: start reading topic file
+Jul 09 13:09:52 [trace] topiclist_load: channel: Chat topic: &quot;This is the 
+public chat channel. Feel free to chat...&quot;
+Jul 09 13:09:52 [trace] topiclist_load: channel: Moderated Support topic: 
+&quot;Support is provided in this channel...&quot;
+Jul 09 13:09:52 [trace] topiclist_load: finished reading topic file
+Jul 09 13:09:52 [info ] _setup_listensock: listening for bnet connections on 
+0.0.0.0:6112 TCP
+Jul 09 13:09:52 [info ] _setup_listensock: listening for w3route connections 
+on 0.0.0.0:6200 TCP
+Jul 09 13:10:04 [debug] ipbanlist_check: lastcheck: 0, now: 1247137804, now-
+lc: 1247137804.
+Jul 09 13:10:04 [debug] ipbanlist_check: checking 100.200.0.23
+Jul 09 13:10:04 [info ] sd_accept: [6] accepted connection from 
+100.200.0.23:58421 on 0.0.0.0:6112
+Jul 09 13:10:04 [info ] conn_create: [6][4] sessionkey=0x21dea28b 
+sessionnum=0x00000000
+Jul 09 13:10:04 [debug] sd_accept: [6] client connected to a bnet listening 
+address
+Jul 09 13:10:04 [info ] handle_init_packet: [6] client initiated bnet 
+connection
+Jul 09 13:10:04 [trace] conn_shutdown: [6] connection allready closed
+Jul 09 13:10:04 [debug] conn_set_class: added latency check timer
+Jul 09 13:10:04 [debug] _client_countryinfo109: [6] COUNTRYINFO_109 packet 
+tzbias=0xffffff88(-120) lcid=1045 langid=1045 arch=&quot;IX86&quot; client=&quot;W3XP&quot; 
+versionid=0x00000017 gamelang=&quot;plPL&quot;
+Jul 09 13:10:04 [debug] _client_countryinfo109: [6] COUNTRYINFO_109 packet 
+from &quot;Poland&quot; &quot;POL&quot;
+Jul 09 13:10:04 [info ] conn_set_archtag: [6] setting client arch to &quot;IX86&quot;
+Jul 09 13:10:04 [info ] conn_set_clienttag: [6] setting client type to &quot;W3XP&quot;
+Jul 09 13:10:04 [info ] conn_set_gamelang: [6] setting client gamelang to 
+&quot;plPL&quot;
+Jul 09 13:10:04 [debug] _client_countryinfo109: [6] selecting version check
+Jul 09 13:10:04 [debug] versioncheck_create: version check entry archtag=IX86, 
+clienttag=W3XP
+Jul 09 13:10:04 [debug] _client_countryinfo109: [6] selected &quot;IX86ver1.mpq&quot; 
+&quot;A=3845581634 B=880823580 C=1363937103 4 A=A-S B=B-C C=C-A A=A-B&quot;
+Jul 09 13:10:04 [info ] _client_authreq109: [6] CLIENT_AUTHREQ_109 
+ticks=0x00001c54, verstr=1.23.0.208 exeinfo=&quot;war3.exe 03/12/09 23:23:40 
+471040&quot; versionid=0x00000017 gameversion=0x011700d0 checksum=0xfad9bc05
+Jul 09 13:10:04 [info ] versioncheck_validate: no match in list, setting to: 
+W3XP
+Jul 09 13:10:04 [info ] _client_authreq109: [6] unable to test client, 
+allowing anyway
+Jul 09 13:10:04 [info ] _client_authreq109: [6] client matches versiontag 
+&quot;W3XP&quot;
+Jul 09 13:10:04 [info ] _client_authreq109: [6] no upgrade for W3XP is 
+available
+Jul 09 13:10:04 [info ] _client_fileinforeq: [6] TOS requested: 
+&quot;termsofservice-plPL.txt&quot; - type = 0x01
+Jul 09 13:10:04 [info ] _client_fileinforeq: [6] TOS requested: &quot;newaccount-
+plPL.txt&quot; - type = 0x02
+Jul 09 13:10:04 [info ] _client_fileinforeq: [6] TOS requested: &quot;chathelp-war3-
+plPL.txt&quot; - type = 0x03
+Jul 09 13:10:05 [info ] _client_fileinforeq: [6] TOS requested: &quot;bnserver-
+WAR3.ini&quot; - type = 0x05
+Jul 09 13:10:10 [debug] file_read_attrs: loading &quot;/usr/local/var/users/grek&quot;
+Jul 09 13:10:10 [info ] _client_loginreqw3: [6] (W3) &quot;grek&quot; passed account 
+check
+Jul 09 13:10:10 [info ] _client_logonproofreq: [6] logon proof requested
+Jul 09 13:10:10 [info ] _client_logonproofreq: [6] (W3) &quot;grek&quot; logged in 
+(right password)
+Jul 09 13:10:10 [debug] _client_anongame_infos: client_tag request tagid=(0x0) 
+tag=(CLIENT_FINDANONGAME_INFOTAG_URL)  tag_unk=(0x0000)
+Jul 09 13:10:10 [debug] _client_anongame_infos: client_tag request tagid=(0x1) 
+tag=(CLIENT_FINDANONGAME_INFOTAG_MAP)  tag_unk=(0x0000)
+Jul 09 13:10:10 [debug] _client_anongame_infos: client_tag request tagid=(0x2) 
+tag=(CLIENT_FINDANONGAME_INFOTAG_TYPE) tag_unk=(0x0000)
+Jul 09 13:10:10 [debug] _client_anongame_infos: client_tag request tagid=(0x3) 
+tag=(CLIENT_FINDANONGAME_INFOTAG_DESC) tag_unk=(0x0000)
+Jul 09 13:10:10 [debug] _client_anongame_infos: client_tag request tagid=(0x4) 
+tag=(CLIENT_FINDANONGAME_INFOTAG_LADR) tag_unk=(0x0000)
+Jul 09 13:10:14 [trace] _client_motdw3: lastnews() 1159675566 news_time 
+1159675567
+Jul 09 13:10:18 [debug] _client_gamelistreq: GAMELISTREPLY looking for public 
+games tag=&quot;W3XP&quot; bngtype=0x0000e000 gtype=all
+Jul 09 13:10:18 [debug] _client_gamelistreq: [6] GAMELISTREPLY sent 0 of 0 
+games
+Jul 09 13:10:32 [info ] handle_bnet: Told Mutual Friends your in game 
+test12345
+Jul 09 13:10:32 [debug] _client_startgame4: [6] got startgame4 status for game 
+&quot;test12345&quot; is 0x00000010 (gametype=0x2001 option=0x0049, flag=0x0000)
+Jul 09 13:10:32 [info ] game_create: game &quot;test12345&quot; (pass &quot;&quot;) type 
+1(UNKNOWN) startver 4 created
+Jul 09 13:11:36 [debug] ipbanlist_check: lastcheck: 1247137804, now: 
+1247137896, now-lc: 92.
+Jul 09 13:11:36 [debug] ipbanlist_check: checking 100.200.0.139
+Jul 09 13:11:36 [info ] sd_accept: [7] accepted connection from 
+100.200.0.139:1760 on 0.0.0.0:6112
+Jul 09 13:11:36 [info ] conn_create: [7][4] sessionkey=0x2e697021 
+sessionnum=0x00000001
+Jul 09 13:11:36 [debug] sd_accept: [7] client connected to a bnet listening 
+address
+Jul 09 13:11:36 [info ] handle_init_packet: [7] client initiated bnet 
+connection
+Jul 09 13:11:36 [trace] conn_shutdown: [7] connection allready closed
+Jul 09 13:11:36 [debug] conn_set_class: added latency check timer
+Jul 09 13:11:36 [debug] _client_countryinfo109: [7] COUNTRYINFO_109 packet 
+tzbias=0xffffff88(-120) lcid=1045 langid=1045 arch=&quot;IX86&quot; client=&quot;W3XP&quot; 
+versionid=0x00000017 gamelang=&quot;plPL&quot;
+Jul 09 13:11:36 [debug] _client_countryinfo109: [7] COUNTRYINFO_109 packet 
+from &quot;Poland&quot; &quot;POL&quot;
+Jul 09 13:11:36 [info ] conn_set_archtag: [7] setting client arch to &quot;IX86&quot;
+Jul 09 13:11:36 [info ] conn_set_clienttag: [7] setting client type to &quot;W3XP&quot;
+Jul 09 13:11:36 [info ] conn_set_gamelang: [7] setting client gamelang to 
+&quot;plPL&quot;
+Jul 09 13:11:36 [debug] _client_countryinfo109: [7] selecting version check
+Jul 09 13:11:36 [debug] versioncheck_create: version check entry archtag=IX86, 
+clienttag=W3XP
+Jul 09 13:11:36 [debug] _client_countryinfo109: [7] selected &quot;IX86ver1.mpq&quot; 
+&quot;A=3845581634 B=880823580 C=1363937103 4 A=A-S B=B-C C=C-A A=A-B&quot;
+Jul 09 13:11:37 [info ] _client_authreq109: [7] CLIENT_AUTHREQ_109 
+ticks=0x08563f9d, verstr=1.23.0.208 exeinfo=&quot;war3.exe 03/12/09 23:23:40 
+471040&quot; versionid=0x00000017 gameversion=0x011700d0 checksum=0xfad9bc05
+Jul 09 13:11:37 [info ] versioncheck_validate: no match in list, setting to: 
+W3XP
+Jul 09 13:11:37 [info ] _client_authreq109: [7] unable to test client, 
+allowing anyway
+Jul 09 13:11:37 [info ] _client_authreq109: [7] client matches versiontag 
+&quot;W3XP&quot;
+Jul 09 13:11:37 [info ] _client_authreq109: [7] no upgrade for W3XP is 
+available
+Jul 09 13:11:37 [info ] _client_fileinforeq: [7] TOS requested: 
+&quot;termsofservice-plPL.txt&quot; - type = 0x01
+Jul 09 13:11:37 [info ] _client_fileinforeq: [7] TOS requested: &quot;newaccount-
+plPL.txt&quot; - type = 0x02
+Jul 09 13:11:37 [info ] _client_fileinforeq: [7] TOS requested: &quot;chathelp-war3-
+plPL.txt&quot; - type = 0x03
+Jul 09 13:11:37 [debug] ipbanlist_check: lastcheck: 1247137896, now: 
+1247137897, now-lc: 1.
+Jul 09 13:11:37 [debug] ipbanlist_check: checking 100.200.0.139
+Jul 09 13:11:37 [info ] sd_accept: [8] accepted connection from 
+100.200.0.139:1761 on 0.0.0.0:6112
+Jul 09 13:11:37 [info ] conn_create: [8][4] sessionkey=0x3ee53418 
+sessionnum=0x00000002
+Jul 09 13:11:37 [debug] sd_accept: [8] client connected to a bnet listening 
+address
+Jul 09 13:11:37 [debug] ipbanlist_check: lastcheck: 1247137896, now: 
+1247137897, now-lc: 1.
+Jul 09 13:11:37 [debug] ipbanlist_check: checking 100.200.0.139
+Jul 09 13:11:37 [info ] sd_accept: [9] accepted connection from 
+100.200.0.139:1762 on 0.0.0.0:6112
+Jul 09 13:11:37 [info ] conn_create: [9][4] sessionkey=0x60bd7c03 
+sessionnum=0x00000003
+Jul 09 13:11:37 [debug] sd_accept: [9] client connected to a bnet listening 
+address
+Jul 09 13:11:37 [info ] handle_init_packet: [8] client initiated file download 
+connection
+Jul 09 13:11:37 [trace] conn_shutdown: [8] connection allready closed
+Jul 09 13:11:37 [info ] handle_init_packet: [9] client initiated file download 
+connection
+Jul 09 13:11:37 [trace] conn_shutdown: [9] connection allready closed
+Jul 09 13:11:37 [info ] file_send: [8] sending file &quot;termsofservice-plPL.txt&quot; of 
+length 1402
+Jul 09 13:11:37 [info ] file_send: [9] sending file &quot;newaccount-plPL.txt&quot; of 
+length 1402
+Jul 09 13:11:37 [debug] sd_tcpinput: [8] read returned -1 (closing connection)
+Jul 09 13:11:37 [info ] conn_destroy: [8] closed file connection
+Jul 09 13:11:37 [debug] sd_tcpinput: [9] read returned -1 (closing connection)
+Jul 09 13:11:37 [info ] conn_destroy: [9] closed file connection
+Jul 09 13:11:37 [debug] ipbanlist_check: lastcheck: 1247137896, now: 
+1247137897, now-lc: 1.
+Jul 09 13:11:37 [debug] ipbanlist_check: checking 100.200.0.139
+Jul 09 13:11:37 [info ] sd_accept: [8] accepted connection from 
+100.200.0.139:1763 on 0.0.0.0:6112
+Jul 09 13:11:37 [info ] conn_create: [8][4] sessionkey=0x69dbf760 
+sessionnum=0x00000004
+Jul 09 13:11:37 [debug] sd_accept: [8] client connected to a bnet listening 
+address
+Jul 09 13:11:37 [info ] handle_init_packet: [8] client initiated file download 
+connection
+Jul 09 13:11:37 [trace] conn_shutdown: [8] connection allready closed
+Jul 09 13:11:37 [debug] ipbanlist_check: lastcheck: 1247137896, now: 
+1247137897, now-lc: 1.
+Jul 09 13:11:37 [debug] ipbanlist_check: checking 100.200.0.139
+Jul 09 13:11:37 [info ] sd_accept: [9] accepted connection from 
+100.200.0.139:1764 on 0.0.0.0:6112
+Jul 09 13:11:37 [info ] conn_create: [9][4] sessionkey=0x774eb0f3 
+sessionnum=0x00000005
+Jul 09 13:11:37 [debug] sd_accept: [9] client connected to a bnet listening 
+address
+Jul 09 13:11:37 [info ] file_send: [8] sending file &quot;chathelp-war3-plPL.txt&quot; of 
+length 351
+Jul 09 13:11:37 [info ] handle_init_packet: [9] client initiated file download 
+connection
+Jul 09 13:11:37 [trace] conn_shutdown: [9] connection allready closed
+Jul 09 13:11:37 [info ] file_send: [9] sending file &quot;icons-WAR3.bni&quot; of length 
+36931
+Jul 09 13:11:37 [debug] sd_tcpinput: [9] read returned -1 (closing connection)
+Jul 09 13:11:37 [info ] conn_destroy: [9] closed file connection
+Jul 09 13:11:37 [debug] sd_tcpinput: [8] read returned -1 (closing connection)
+Jul 09 13:11:37 [info ] conn_destroy: [8] closed file connection
+Jul 09 13:11:38 [info ] _client_fileinforeq: [7] TOS requested: &quot;bnserver-
+WAR3.ini&quot; - type = 0x05
+Jul 09 13:11:38 [debug] ipbanlist_check: lastcheck: 1247137896, now: 
+1247137898, now-lc: 2.
+Jul 09 13:11:38 [debug] ipbanlist_check: checking 100.200.0.139
+Jul 09 13:11:38 [info ] sd_accept: [8] accepted connection from 
+100.200.0.139:1766 on 0.0.0.0:6112
+Jul 09 13:11:38 [info ] conn_create: [8][4] sessionkey=0x64e4a9b8 
+sessionnum=0x00000006
+Jul 09 13:11:38 [debug] sd_accept: [8] client connected to a bnet listening 
+address
+Jul 09 13:11:38 [info ] handle_init_packet: [8] client initiated file download 
+connection
+Jul 09 13:11:38 [trace] conn_shutdown: [8] connection allready closed
+Jul 09 13:11:38 [info ] file_send: [8] sending file &quot;bnserver-WAR3.ini&quot; of 
+length 352
+Jul 09 13:11:38 [debug] sd_tcpinput: [8] read returned -1 (closing connection)
+Jul 09 13:11:38 [info ] conn_destroy: [8] closed file connection
+Jul 09 13:11:49 [debug] file_read_attrs: loading &quot;/usr/local/var/users/Misiek&quot;
+Jul 09 13:11:49 [info ] _client_loginreqw3: [7] (W3) &quot;misiek&quot; passed account 
+check
+Jul 09 13:11:49 [info ] _client_logonproofreq: [7] logon proof requested
+Jul 09 13:11:49 [info ] _client_logonproofreq: [7] (W3) &quot;misiek&quot; logged in 
+(right password)
+Jul 09 13:11:49 [debug] _client_anongame_infos: client_tag request tagid=(0x0) 
+tag=(CLIENT_FINDANONGAME_INFOTAG_URL)  tag_unk=(0x0000)
+Jul 09 13:11:49 [debug] _client_anongame_infos: client_tag request tagid=(0x1) 
+tag=(CLIENT_FINDANONGAME_INFOTAG_MAP)  tag_unk=(0x0000)
+Jul 09 13:11:49 [debug] _client_anongame_infos: client_tag request tagid=(0x2) 
+tag=(CLIENT_FINDANONGAME_INFOTAG_TYPE) tag_unk=(0x0000)
+Jul 09 13:11:49 [debug] _client_anongame_infos: client_tag request tagid=(0x3) 
+tag=(CLIENT_FINDANONGAME_INFOTAG_DESC) tag_unk=(0x0000)
+Jul 09 13:11:49 [debug] _client_anongame_infos: client_tag request tagid=(0x4) 
+tag=(CLIENT_FINDANONGAME_INFOTAG_LADR) tag_unk=(0x0000)
+Jul 09 13:11:53 [trace] _client_motdw3: lastnews() 1159675566 news_time 
+1242856800
+Jul 09 13:11:59 [debug] _client_gamelistreq: GAMELISTREPLY looking for public 
+games tag=&quot;W3XP&quot; bngtype=0x0000e000 gtype=all
+Jul 09 13:11:59 [debug] _glist_cb: [7] considering listing game=&quot;test12345&quot;, 
+pass=&quot;&quot; clienttag=&quot;W3XP&quot; gtype=1
+Jul 09 13:11:59 [debug] trans_net: checking 100.200.0.23:6113 for client 
+100.200.0.139 ...
+Jul 09 13:11:59 [debug] trans_net: against entry -&gt; 0.0.0.0:6200 output 
+10.1.12.2:6200 network 100.200.0.0/0xffffff00
+Jul 09 13:11:59 [debug] trans_net: entry does match input address
+Jul 09 13:11:59 [debug] trans_net: against entry -&gt; 0.0.0.0:6200 output 
+149.156.0.157:6200 network 0.0.0.0/0x00000000
+Jul 09 13:11:59 [debug] trans_net: entry does match input address
+Jul 09 13:11:59 [debug] trans_net: no match found for 100.200.0.23:6113 (not 
+translated)
+Jul 09 13:11:59 [debug] _client_gamelistreq: [7] GAMELISTREPLY sent 1 of 1 
+games
+Jul 09 13:12:07 [debug] _client_gamelistreq: GAMELISTREPLY looking for public 
+games tag=&quot;W3XP&quot; bngtype=0x0000e000 gtype=all
+Jul 09 13:12:07 [debug] _glist_cb: [7] considering listing game=&quot;test12345&quot;, 
+pass=&quot;&quot; clienttag=&quot;W3XP&quot; gtype=1
+Jul 09 13:12:07 [debug] trans_net: checking 100.200.0.23:6113 for client 
+100.200.0.139 ...
+Jul 09 13:12:07 [debug] trans_net: against entry -&gt; 0.0.0.0:6200 output 
+10.1.12.2:6200 network 100.200.0.0/0xffffff00
+Jul 09 13:12:07 [debug] trans_net: entry does match input address
+Jul 09 13:12:07 [debug] trans_net: against entry -&gt; 0.0.0.0:6200 output 
+149.156.0.157:6200 network 0.0.0.0/0x00000000
+Jul 09 13:12:07 [debug] trans_net: entry does match input address
+Jul 09 13:12:07 [debug] trans_net: no match found for 100.200.0.23:6113 (not 
+translated)
+Jul 09 13:12:07 [debug] _client_gamelistreq: [7] GAMELISTREPLY sent 1 of 1 
+games
+Jul 09 13:12:15 [debug] _client_gamelistreq: GAMELISTREPLY looking for public 
+games tag=&quot;W3XP&quot; bngtype=0x0000e000 gtype=all
+Jul 09 13:12:15 [debug] _glist_cb: [7] considering listing game=&quot;test12345&quot;, 
+pass=&quot;&quot; clienttag=&quot;W3XP&quot; gtype=1
+Jul 09 13:12:15 [debug] trans_net: checking 100.200.0.23:6113 for client 
+100.200.0.139 ...
+Jul 09 13:12:15 [debug] trans_net: against entry -&gt; 0.0.0.0:6200 output 
+10.1.12.2:6200 network 100.200.0.0/0xffffff00
+Jul 09 13:12:15 [debug] trans_net: entry does match input address
+Jul 09 13:12:15 [debug] trans_net: against entry -&gt; 0.0.0.0:6200 output 
+149.156.0.157:6200 network 0.0.0.0/0x00000000
+Jul 09 13:12:15 [debug] trans_net: entry does match input address
+Jul 09 13:12:15 [debug] trans_net: no match found for 100.200.0.23:6113 (not 
+translated)
+Jul 09 13:12:15 [debug] _client_gamelistreq: [7] GAMELISTREPLY sent 1 of 1 
+games
+Jul 09 13:12:23 [debug] _client_gamelistreq: GAMELISTREPLY looking for public 
+games tag=&quot;W3XP&quot; bngtype=0x0000e000 gtype=all
+Jul 09 13:12:23 [debug] _glist_cb: [7] considering listing game=&quot;test12345&quot;, 
+pass=&quot;&quot; clienttag=&quot;W3XP&quot; gtype=1
+Jul 09 13:12:23 [debug] trans_net: checking 100.200.0.23:6113 for client 
+100.200.0.139 ...
+Jul 09 13:12:23 [debug] trans_net: against entry -&gt; 0.0.0.0:6200 output 
+10.1.12.2:6200 network 100.200.0.0/0xffffff00
+Jul 09 13:12:23 [debug] trans_net: entry does match input address
+Jul 09 13:12:23 [debug] trans_net: against entry -&gt; 0.0.0.0:6200 output 
+149.156.0.157:6200 network 0.0.0.0/0x00000000
+Jul 09 13:12:23 [debug] trans_net: entry does match input address
+Jul 09 13:12:23 [debug] trans_net: no match found for 100.200.0.23:6113 (not 
+translated)
+Jul 09 13:12:23 [debug] _client_gamelistreq: [7] GAMELISTREPLY sent 1 of 1 
+games
+Jul 09 13:12:30 [trace] _client_motdw3: lastnews() 1159675566 news_time 
+1159675567
+Jul 09 13:14:55 [info ] _client_closegame: [6] client closing game
+Jul 09 13:14:56 [info ] _client_closegame: [6] client closing game
+Jul 09 13:14:56 [debug] game_del_player: game &quot;test12345&quot; has ref=1, count=1; 
+trying to remove player &quot;grek&quot;
+Jul 09 13:14:56 [debug] game_del_player: removing player #0 &quot;grek&quot; from 
+&quot;test12345&quot;, 0 players left
+Jul 09 13:14:56 [debug] game_del_player: player &quot;grek&quot; left without reporting 
+(valid) results
+Jul 09 13:14:56 [debug] game_del_player: player deleted... (ref=1)
+Jul 09 13:14:56 [debug] game_del_player: no more players, reporting game
+Jul 09 13:14:56 [debug] game_del_player: no more players, destroying game
+Jul 09 13:14:56 [debug] game_destroy: game &quot;test12345&quot; (count=1 ref=1) removed 
+from list...
+Jul 09 13:14:56 [info ] game_destroy: game deleted
+Jul 09 13:14:56 [trace] _client_motdw3: lastnews() 1159675566 news_time 
+1159675567
+Jul 09 13:14:58 [debug] sd_tcpinput: [6] read returned -1 (closing connection)
+Jul 09 13:14:58 [info ] conn_destroy: [6] &quot;grek&quot; logged out
+Jul 09 13:14:58 [info ] conn_destroy: [6] closed bnet connection
+Jul 09 13:16:46 [debug] _client_gamelistreq: GAMELISTREPLY looking for public 
+games tag=&quot;W3XP&quot; bngtype=0x0000e000 gtype=all
+Jul 09 13:16:46 [debug] _client_gamelistreq: [7] GAMELISTREPLY sent 0 of 0 
+games
+Jul 09 13:16:51 [trace] _client_motdw3: lastnews() 1159675566 news_time 
+1159675567
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#56">[ date ]</a>
+              <a href="thread.html#56">[ thread ]</a>
+              <a href="subject.html#56">[ subject ]</a>
+              <a href="author.html#56">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/pvpgn-users">More information about the pvpgn-users
+mailing list</a><br>
+</body></html>

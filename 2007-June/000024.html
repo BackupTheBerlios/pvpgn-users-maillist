@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [pvpgn-users] Ayuda PVPGN Starcraft
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/pvpgn-users/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:pvpgn-users%40lists.berlios.de?Subject=Re%3A%20%5Bpvpgn-users%5D%20Ayuda%20PVPGN%20Starcraft&In-Reply-To=%3CBAY106-F24273C8FF77D0F7B954048D5170%40phx.gbl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000023.html">
+   <LINK REL="Next"  HREF="000019.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[pvpgn-users] Ayuda PVPGN Starcraft</H1>
+    <B>Javier Guevara</B> 
+    <A HREF="mailto:pvpgn-users%40lists.berlios.de?Subject=Re%3A%20%5Bpvpgn-users%5D%20Ayuda%20PVPGN%20Starcraft&In-Reply-To=%3CBAY106-F24273C8FF77D0F7B954048D5170%40phx.gbl%3E"
+       TITLE="[pvpgn-users] Ayuda PVPGN Starcraft">dreammanjg at msn.com
+       </A><BR>
+    <I>Fri Jun 22 20:06:47 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000023.html">[pvpgn-users] Ayuda PVPGN Starcraft
+</A></li>
+        <LI>Next message: <A HREF="000019.html">[pvpgn-users] D2 Server
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#24">[ date ]</a>
+              <a href="thread.html#24">[ thread ]</a>
+              <a href="subject.html#24">[ subject ]</a>
+              <a href="author.html#24">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Las reglas de Iptables son:
+
+iptables -A INPUT -s 0.0.0.0/0 -p tcp -m tcp --dport 6112:6119 -j ACCEPT
+iptables -A OUTPUT -p tcp -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A INPUT -s 0.0.0.0/0 -p udp -m udp --dport 6112:6119 -j ACCEPT
+iptables -A OUTPUT -p udp -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+iptables -A INPUT -s 0.0.0.0/0 -p tcp -m tcp --dport 23 -j ACCEPT
+iptables -A OUTPUT -p tcp -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A INPUT -s 0.0.0.0/0 -p udp -m udp --dport 23 -j ACCEPT
+iptables -A OUTPUT -p udp -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+iptables -A INPUT -s 0.0.0.0/0 -p tcp -m tcp --dport 6667 -j ACCEPT
+iptables -A OUTPUT -p tcp -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A INPUT -s 0.0.0.0/0 -p udp -m udp --dport 6667 -j ACCEPT
+iptables -A OUTPUT -p udp -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+iptables -A FORWARD -s $ALL -i $IWAN -p tcp --dport 6112:6119 -j ACCEPT
+iptables -A FORWARD -s $ALL -i $IWAN -p udp --dport 6112:6119 -j ACCEPT
+# ...y conexiones salientes relacionadas
+iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+y de nuevo coloco el error:
+
+&quot;you were unable to join. The game you selected is not responding. the
+latency to de game creator is too high&quot;.
+
+
+Sucede cuando intenta unirse a un juego que creo otro usuario.
+
+
+&gt;<i>From: &quot;Sebastian H. Vega&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/pvpgn-users">svega0 at yahoo.com.ar</A>&gt;
+</I>&gt;<i>Reply-To: <A HREF="https://lists.berlios.de/mailman/listinfo/pvpgn-users">pvpgn-users at lists.berlios.de</A>
+</I>&gt;<i>To: <A HREF="https://lists.berlios.de/mailman/listinfo/pvpgn-users">pvpgn-users at lists.berlios.de</A>
+</I>&gt;<i>Subject: Re: [pvpgn-users] Ayuda PVPGN Starcraft
+</I>&gt;<i>Date: Tue, 19 Jun 2007 13:15:51 -0300
+</I>&gt;<i>
+</I>&gt;<i>Si abriste los puertos que dice el instructivo, deberia estar bien
+</I>&gt;<i>Mete la regla de iptables para ver si esta correcta, si la coneccion a
+</I>&gt;<i>internet esta en la pc donde esta el servidor , solo hace falta INPUT.
+</I>&gt;<i>Despues proba un nmap desde afuera para ver si estan abiertos. y
+</I>&gt;<i>cpmparalos con un nmap desde localhost para ver si son los mismos.
+</I>&gt;<i>Saludos
+</I>&gt;<i>Javier Guevara wrote:
+</I>
+_________________________________________________________________
+Las mejores tiendas, los precios mas bajos, entregas en todo el mundo, 
+YupiMSN Compras: <A HREF="http://latam.msn.com/compras/">http://latam.msn.com/compras/</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000023.html">[pvpgn-users] Ayuda PVPGN Starcraft
+</A></li>
+	<LI>Next message: <A HREF="000019.html">[pvpgn-users] D2 Server
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#24">[ date ]</a>
+              <a href="thread.html#24">[ thread ]</a>
+              <a href="subject.html#24">[ subject ]</a>
+              <a href="author.html#24">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/pvpgn-users">More information about the pvpgn-users
+mailing list</a><br>
+</body></html>
